@@ -1,53 +1,19 @@
-
 import { useState, useEffect } from "react";
-
 const PRODUCTS=[
-{id:"shop",title:"Shop - 330 Designs",sub:"Printify Live - 330 Products",desc:"Mugs, hoodies, tees, tumblers, all 330 designs live",color:"#ff00ff",accent:"#ff00ff",icon:"🛍️",badge:"330 LIVE",pages:1,pdfs:[], link:"https://shop.mimiscozycorner.com"},
-{id:"twin-story",title:"The Twin Story Method™",sub:"Finding Faith in Nothing - 83 Page Workbook",desc:"Twin Story = public vs private - 50 day journal, challenge, cards, tracker",color:"#1a1a2e",accent:"#d4af37",icon:"📖",badge:"NEW",pages:3,pdfs:["twin-story-method-workbook.pdf"]},
-{id:"budget",title:"Budget Buster",sub:"Save $500/mo - Coupon Queen",desc:"Dollar deals, coupon stacking, meal $100/wk, tracker",color:"#0f5ca8",accent:"#00d4ff",icon:"💰",badge:"BUDGET",pages:2,pdfs:["budget-buster-complete.pdf"]},
-{id:"housing",title:"Section 8 Housing Guides",sub:"Rochester Voucher Help",desc:"How to apply, docs, scripts that work",color:"#0f5ca8",accent:"#00ffff",icon:"🏠",badge:"HOUSING",pages:2,pdfs:["section8-complete.pdf"]},
-{id:"daily",title:"Mimis Daily Finds",sub:"Soft Life + Mom Life + Bookish",desc:"Cozy reader club, mom fuel, blessed & stressed",color:"#ff69b4",accent:"#ff1493",icon:"☕",badge:"DAILY",pages:1,pdfs:["daily-finds-workbook.pdf"]},
-{id:"creative",title:"Creative Ads",sub:"50 Templates - 1 Per Page - 50 Pages - 55KB",desc:"50 ad templates, each 1 page with hook, example, Canva",color:"#ff1493",accent:"#ff00ff",icon:"🎨",badge:"50 PAGES",pages:50,pdfs:["ad-templates.pdf"]},
-{id:"manifest",title:"Manifesting",sub:"Divine + Healing",desc:"Spiritual divine healing in progress",color:"#6a00ff",accent:"#d4af37",icon:"✨",badge:"HEALING",pages:1,pdfs:["manifesting-workbook.pdf"]},
+{id:"shop",title:"Shop - 330 Designs",sub:"Printify Live",desc:"Mugs, hoodies, tees, tumblers, 330 designs live",color:"#ff00ff",accent:"#ff00ff",icon:"🛍️",badge:"330 LIVE",pages:1,pdfs:[], link:"https://shop.mimiscozycorner.com"},
+{id:"twin-story",title:"The Twin Story Method™",sub:"Finding Faith in Nothing",desc:"Twin Story = public vs private - 50 day journal",color:"#1a1a2e",accent:"#d4af37",icon:"📖",badge:"NEW",pages:3,pdfs:["twin-story-method-workbook.pdf"]},
+{id:"budget",title:"Budget Buster",sub:"Save $500/mo",desc:"Dollar deals, coupon stacking, $100/wk",color:"#0f5ca8",accent:"#00d4ff",icon:"💰",badge:"BUDGET",pages:2,pdfs:["budget-buster-complete.pdf"]},
+{id:"housing",title:"Section 8 Housing Guides",sub:"Rochester Voucher Help",desc:"How to apply, docs, scripts",color:"#0f5ca8",accent:"#00ffff",icon:"🏠",badge:"HOUSING",pages:2,pdfs:["section8-complete.pdf"]},
+{id:"daily",title:"Mimi's Daily Finds",sub:"Soft Life + Mom Life",desc:"Cozy reader club, mom fuel",color:"#ff69b4",accent:"#ff1493",icon:"☕",badge:"DAILY",pages:1,pdfs:["daily-finds-workbook.pdf"]},
+{id:"creative",title:"Creative Ads",sub:"50 Templates - 1 Per Page - 55KB",desc:"50 ad templates, each 1 page",color:"#ff1493",accent:"#ff00ff",icon:"🎨",badge:"50 PAGES",pages:50,pdfs:["ad-templates.pdf"]},
+{id:"manifest",title:"Manifesting",sub:"Divine + Healing",desc:"Spiritual divine healing",color:"#6a00ff",accent:"#d4af37",icon:"✨",badge:"HEALING",pages:1,pdfs:["manifesting-workbook.pdf"]},
 ];
-
 function Viewer({p,onBack}:{p:any,onBack:()=>void}){
 const [pg,setPg]=useState(1); const total=p.pages; const prog=(pg/total)*100;
 useEffect(()=>window.scrollTo(0,0),[pg]);
-if(p.id==="shop"){
-  return(
-    <div style={{minHeight:"100vh",background:"#fff",paddingTop:"70px",textAlign:"center"}}>
-      <div style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"#fff",borderBottom:"1px solid #e2dccc",padding:"12px",display:"flex",justifyContent:"space-between"}}>
-        <div style={{fontWeight:800}}>SHOP 330 LIVE</div><button onClick={onBack} style={{padding:"8px 16px",borderRadius:"8px",border:"1px solid #ccc"}}>Back</button>
-      </div>
-      <h1 style={{fontSize:"28px",fontWeight:900,marginTop:"20px"}}>🛍️ Shop - 330 Designs Live</h1>
-      <a href="https://shop.mimiscozycorner.com" target="_blank" style={{display:"inline-block",marginTop:"16px",background:"#ff00ff",color:"#fff",padding:"16px 32px",borderRadius:"12px",fontWeight:800,textDecoration:"none"}}>Go to shop.mimiscozycorner.com →</a>
-      <div style={{marginTop:"16px"}}><button onClick={onBack} style={{padding:"10px 20px",borderRadius:"8px"}}>← Back to Main</button></div>
-    </div>
-  );
+if(p.id==="shop"){return(<div style={{minHeight:"100vh",background:"#fff",paddingTop:"70px",textAlign:"center"}}><div style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"#fff",borderBottom:"1px solid #e2dccc",padding:"12px",display:"flex",justifyContent:"space-between"}}><div style={{fontWeight:800}}>SHOP 330 LIVE</div><button onClick={onBack} style={{padding:"8px 16px",borderRadius:"8px"}}>Back</button></div><h1 style={{fontSize:"28px",fontWeight:900,marginTop:"20px"}}>Shop - 330 Designs Live</h1><a href="https://shop.mimiscozycorner.com" target="_blank" style={{display:"inline-block",marginTop:"16px",background:"#ff00ff",color:"#fff",padding:"16px 32px",borderRadius:"12px",fontWeight:800,textDecoration:"none"}}>Go to shop.mimiscozycorner.com →</a><div style={{marginTop:"16px"}}><button onClick={onBack} style={{padding:"10px 20px",borderRadius:"8px"}}>Back to Main</button></div></div>);}
+return(<div style={{minHeight:"100vh",background:"#faf8f3"}}><div style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"rgba(255,255,255,0.95)",borderBottom:"1px solid #e2dccc"}}><div style={{maxWidth:"1280px",margin:"0 auto",padding:"12px 16px",display:"flex",justifyContent:"space-between"}}><div style={{display:"flex",alignItems:"center",gap:"12px"}}><div style={{width:"40px",height:"40px",borderRadius:"8px",background:`linear-gradient(135deg, ${p.accent}, #f4d35e)`,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:900,color:"#fff"}}>TS</div><div><div style={{fontSize:"11px",color:"#666"}}>{p.title}</div><div style={{fontWeight:700}}>{p.title} Page {pg}</div></div></div><div style={{display:"flex",gap:"12px"}}><button onClick={()=>setPg(Math.max(1,pg-1))} disabled={pg===1} style={{padding:"8px 16px",borderRadius:"8px"}}>Prev</button><span>{pg}/{total}</span><button onClick={()=>setPg(Math.min(total,pg+1))} disabled={pg===total} style={{padding:"8px 16px",borderRadius:"8px",background:`linear-gradient(135deg, ${p.accent}, #e8d084)`}}>Next</button></div></div><div style={{height:"6px",background:"rgba(212,175,55,0.2)"}}><div style={{height:"100%",width:`${prog}%`,background:`linear-gradient(90deg, ${p.accent}, #f4d35e)`}}></div></div></div><div style={{paddingTop:"110px",paddingBottom:"100px",maxWidth:"900px",margin:"0 auto",padding:"16px"}}><div style={{background:"#fff",borderRadius:"16px",padding:"32px",border:"1px solid #e2dccc"}}><h1 style={{fontSize:"26px"}}>{p.icon} {p.title} - Page {pg} of {total}</h1><p style={{color:p.color,fontWeight:700}}>{p.sub}</p><p>{p.desc} - Prev/Next + Progress bar - Real PDFs inside</p><div style={{marginTop:"24px",padding:"20px",background:"#1a1a2e",borderRadius:"12px",color:"#fff"}}><h3 style={{color:"#d4af37",marginTop:0}}>Real PDFs - Inside Workbook</h3>{p.pdfs.map((pdf:string)=><p key={pdf}>✅ <a href={`/pdfs/${pdf}`} target="_blank" style={{color:"#d4af37",fontWeight:700}}>{pdf} - {pdf==="ad-templates.pdf"?"55KB 50 pages":"Real PDF"} Open</a></p>)}<button onClick={onBack} style={{marginTop:"16px",background:"#d4af37",color:"#1a1a2e",border:"none",padding:"12px 24px",borderRadius:"8px",fontWeight:700}}>Back</button></div></div></div><div style={{position:"fixed",bottom:0,left:0,right:0,background:"#fff",borderTop:"1px solid #e2dccc",padding:"12px",display:"flex",justifyContent:"space-between"}}><button onClick={()=>setPg(Math.max(1,pg-1))} disabled={pg===1} style={{padding:"10px 16px",borderRadius:"8px"}}>Previous</button><span>{pg}/{total}</span><button onClick={()=>setPg(Math.min(total,pg+1))} disabled={pg===total} style={{padding:"10px 16px",borderRadius:"8px",background:"#1a1a2e",color:"#fff"}}>Next</button></div></div>);
 }
-return(
-<div style={{minHeight:"100vh",background:"#faf8f3"}}>
-<div style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"rgba(255,255,255,0.95)",borderBottom:"1px solid #e2dccc"}}>
-<div style={{maxWidth:"1280px",margin:"0 auto",padding:"12px 16px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-<div style={{display:"flex",alignItems:"center",gap:"12px"}}><div style={{width:"40px",height:"40px",borderRadius:"8px",background:`linear-gradient(135deg, ${p.accent}, #f4d35e)`,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:900,color:"#fff"}}>TS</div><div><div style={{fontSize:"11px",color:"#666"}}>{p.title}</div><div style={{fontWeight:700}}>{p.title} Page {pg}</div></div></div>
-<div style={{display:"flex",gap:"12px",alignItems:"center"}}><button onClick={()=>setPg(Math.max(1,pg-1))} disabled={pg===1} style={{padding:"8px 16px",borderRadius:"8px",border:"1px solid #e2dccc"}}>Prev</button><span>{pg}/{total}</span><button onClick={()=>setPg(Math.min(total,pg+1))} disabled={pg===total} style={{padding:"8px 16px",borderRadius:"8px",border:"none",background:`linear-gradient(135deg, ${p.accent}, #e8d084)`,fontWeight:700}}>Next</button></div>
-</div><div style={{height:"6px",background:"rgba(212,175,55,0.2)"}}><div style={{height:"100%",width:`${prog}%`,background:`linear-gradient(90deg, ${p.accent}, #f4d35e)`,transition:"width 0.5s"}}></div></div>
-</div>
-<div style={{paddingTop:"110px",paddingBottom:"100px",maxWidth:"900px",margin:"0 auto",padding:"16px"}}>
-<div style={{background:"#fff",borderRadius:"16px",padding:"32px",border:"1px solid #e2dccc"}}>
-<h1 style={{fontSize:"26px"}}>{p.icon} {p.title} - Page {pg} of {total}</h1><p style={{color:p.color,fontWeight:700}}>{p.sub}</p><p>{p.desc} - Realistic info per page - Prev/Next + Progress bar</p>
-<div style={{marginTop:"24px",padding:"20px",background:"#1a1a2e",borderRadius:"12px",color:"#fff"}}>
-<h3 style={{color:"#d4af37",marginTop:0}}>Real PDFs - Inside Workbook - Not at Bottom of Main Site</h3>
-{p.pdfs.map((pdf:string)=><p key={pdf}>✅ <a href={`/pdfs/${pdf}`} target="_blank" style={{color:"#d4af37",fontWeight:700}}>{pdf} - {pdf==="ad-templates.pdf"?"55KB 50 pages":"Real PDF"} Open</a></p>)}
-<button onClick={onBack} style={{marginTop:"16px",background:"#d4af37",color:"#1a1a2e",border:"none",padding:"12px 24px",borderRadius:"8px",fontWeight:700}}>Back to All Products</button>
-</div>
-</div></div>
-<div style={{position:"fixed",bottom:0,left:0,right:0,background:"#fff",borderTop:"1px solid #e2dccc",padding:"12px",display:"flex",justifyContent:"space-between"}}><button onClick={()=>setPg(Math.max(1,pg-1))} disabled={pg===1} style={{padding:"10px 16px",borderRadius:"8px",border:"1px solid #ccc"}}>Previous</button><span>{pg}/{total}</span><button onClick={()=>setPg(Math.min(total,pg+1))} disabled={pg===total} style={{padding:"10px 16px",borderRadius:"8px",border:"none",background:"#1a1a2e",color:"#fff"}}>Next</button></div>
-</div>
-);
-}
-
 export default function App(){
 const [hash,setHash]=useState(typeof window!=='undefined'?window.location.hash:"");
 useEffect(()=>{const h=()=>setHash(window.location.hash); window.addEventListener("hashchange",h); return()=>window.removeEventListener("hashchange",h)},[]);
@@ -55,8 +21,10 @@ const id=hash.replace("#product-","").replace("#",""); const cur=PRODUCTS.find(p
 if(cur) return <Viewer p={cur} onBack={()=>{window.location.hash=""; setHash("");}} />;
 return(
 <div style={{background:"#fffaf5",minHeight:"100vh"}}>
-<div style={{background:"#ff00ff",textAlign:"center",borderBottom:"4px solid #a2006d"}}><img src="/images/mimi-banner-magenta.png" alt="Mimi" style={{width:"100%",maxWidth:"1400px",margin:"0 auto",display:"block"}} /></div>
-<div style={{background:"white",borderBottom:"3px solid #ff00ff",padding:"14px",textAlign:"center"}}><h1 style={{fontSize:"28px",fontWeight:900,background:"linear-gradient(90deg,#ff00ff,#6a00ff)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>mimiscozycorner.com</h1><p style={{fontSize:"13px",color:"#ff00ff",fontWeight:800,margin:0}}>ALL 7 PRODUCTS - No Atlas OS - Shop 330 + 6 Workbooks - Prev/Next + Progress Bar + Real PDFs Inside</p></div>
+<div style={{background:"#ff00ff",textAlign:"center",borderBottom:"4px solid #a2006d"}}><img src="/images/mimi-banner-magenta.png" alt="Mimi's Cozy Corner - NO strip - Custom Designs deleted" style={{width:"100%",maxWidth:"1400px",margin:"0 auto",display:"block"}} /></div>
+<div style={{background:"white",borderBottom:"3px solid #ff00ff",padding:"14px",textAlign:"center"}}>
+<h1 style={{fontSize:"28px",fontWeight:900,background:"linear-gradient(90deg,#ff00ff,#6a00ff)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>mimiscozycorner.com</h1>
+</div>
 <div style={{maxWidth:"1150px",margin:"0 auto",padding:"16px",display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"18px"}}>
 {PRODUCTS.map(p=><div key={p.id} style={{background:"white",borderRadius:"18px",overflow:"hidden",boxShadow:"0 6px 16px rgba(0,0,0,0.1)",borderTop:`5px solid ${p.color}`}}>
 <div style={{height:"200px",background:"#faf8f3",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{textAlign:"center"}}><div style={{fontSize:"48px"}}>{p.icon}</div><div style={{fontWeight:900,color:p.color}}>{p.title}</div><div style={{fontSize:"11px",color:"#666"}}>{p.sub}</div></div></div>
