@@ -119,7 +119,7 @@ export default function App(){
         </div>
       </div>
 
-      Bottom Shop Banner - All links to shop */}
+      {/* Bottom Shop Banner - All links to shop */}
 <div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
   <img 
     src="/images/mimi-banner-magenta.png" 
