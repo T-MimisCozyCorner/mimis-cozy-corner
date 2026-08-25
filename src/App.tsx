@@ -16,7 +16,7 @@ export default function App(){
     { 
       id: "budget", 
       domain: "budget.mimiscozycorner.com", 
-      url: "https://budget.mimiscozycorner.com", 
+      url: "https://shop.mimiscozycorner.com?brand=budget", 
       title: "Budget Buster", 
       subtitle: "Big Savings • Smart Finds • Happy Wallets!", 
       desc: "Save Money Finds - Dollar deals, coupon queen, broke but cozy",
@@ -27,7 +27,7 @@ export default function App(){
     { 
       id: "housing", 
       domain: "housing.mimiscozycorner.com", 
-      url: "https://housing.mimiscozycorner.com", 
+      url: "https://shop.mimiscozycorner.com#housing", 
       title: "Section 8 Housing", 
       subtitle: "Helping Families Find a Place to Call Home", 
       desc: "Housing Choice Voucher - Guidance Resources Support Hope - 6 Properties",
@@ -38,7 +38,7 @@ export default function App(){
     { 
       id: "atlas", 
       domain: "atlas.mimiscozycorner.com", 
-      url: "https://atlas.mimiscozycorner.com", 
+      url: "https://shop.mimiscozycorner.com?brand=atlas", 
       title: "Atlas OS", 
       subtitle: "Manifesting + Sec 8 Guides", 
       desc: "Spiritual, Divine, Healing in Progress - Sec 8 voucher guides, housing scripts, manifesting",
@@ -129,7 +129,7 @@ export default function App(){
 </div>
 
 <div style={{display:"flex", justifyContent:"center", gap:"15px", padding:"20px", background:"#0a0a0f"}}>
-  <button onClick={()=>window.open("https://budget.mimiscozycorner.com")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Budget Busters</button>
+  <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=budget")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Budget Busters</button>
   <button onClick={()=>window.open("https://shop.mimiscozycorner.com")} style={{background:"#00ffff", color:"black", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Mimi's Shop</button>
   <button onClick={()=>window.open("https://shop.mimiscozycorner.com")} style={{background:"#ff1493", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>All Products →</button>
 </div>
