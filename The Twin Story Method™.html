@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Twin Story Method™ - Finding Faith in Nothing | Premium Workbook</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+    :root {
+        --deep-indigo: #1a1a2e;
+        --gold: #d4af37;
+        --gold-light: #e8d084;
+        --cream: #faf8f3;
+        --cream-dark: #f0ede5;
+        --text-primary: #1a1a2e;
+        --text-secondary: #4a4a5a;
+        --border: #e2dccc;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--text-primary);
+        background: var(--cream);
+        line-height: 1.7;
+    }
+    
+    h1, h2, h3, h4, .serif {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    
+    .serif-italic {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+    }
+    
+    .gold-gradient {
+        background: linear-gradient(135deg, #d4af37 0%, #f4d35e 50%, #d4af37 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .gold-foil {
+        background: linear-gradient(135deg, #d4af37 0%, #f4d35e 25%, #d4af37 50%, #b8941f 75%, #d4af37 100%);
+        background-size: 200% 200%;
+        animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .page {
+        min-height: 100vh;
+        padding: 2rem 1rem;
+        display: none;
+        background: var(--cream);
+        position: relative;
+    }
+    
+    .page.active {
+        display: block;
+    }
+    
+    .page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 40%;
+        background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    @media print {
+        .no-print { display: none !important; }
+        .page {
+            display: block !important;
+            page-break-after: always;
+            min-height: 0;
+            padding: 0.5in;
+        }
+        body { background: white; }
+        .premium-card { 
+            box-shadow: none !important;
+            border: 1px solid var(--border) !important;
+        }
+        textarea, .journal-textarea {
+            border: none !important;
+            border-bottom: 1.5px solid #999 !important;
+            border-radius: 0 !important;
+            min-height: 1.2in;
+            background: transparent !important;
+            color: #000 !important;
+            padding: 0.5rem 0 !important;
+            box-shadow: none !important;
+            resize: none !important;
+        }
+        select {
+            border: 1.5px solid var(--gold) !important;
+            -webkit-appearance: menulist;
+        }
+        .copy-btn, .mic-btn, .mic-wrapper { display: none !important; }
+        .textarea-container { display: block !important; }
+    }
+    
+    textarea, input[type="text"], input[type="date"], select, .journal-textarea {
+        width: 100%;
+        border: 1.5px solid var(--gold);
+        border-radius: 8px;
+        padding: 0.875rem 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: #faf8f3;
+        color: var(--deep-indigo);
+        resize: vertical;
+    }
+    
+    textarea:focus, input:focus, select:focus, .journal-textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        transform: translateY(-1px);
+    }
+    
+    select {
+        cursor: pointer;
+        background-color: var(--cream);
+        color: var(--deep-indigo);
+        border-color: var(--gold);
+        font-weight: 500;
+    }
+    
+    .writing-line {
+        border: none;
+        border-bottom: 1.5px solid var(--border);
+        border-radius: 0;
+        padding: 0.5rem 0;
+        margin-bottom: 0.75rem;
+        background: transparent;
+    }
+    
+    .journal-textarea {
+        min-height: 120px;
+        padding-right: 3rem;
+    }
+    
+    .journal-group {
+        margin-bottom: 0.75rem;
+    }
+    
+    .textarea-container {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .textarea-container textarea {
+        flex: 1;
+    }
+    
+    .mic-btn {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold) 0%, #e8d084 100%);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        color: var(--deep-indigo);
+        margin-top: 0.5rem;
+    }
+    
+    .mic-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+    
+    .mic-btn.recording {
+        animation: pulse 1.5s infinite;
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        color: white;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+        50% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+    }
+    
+    .mic-wrapper {
+        position: absolute;
+        right: 0.75rem;
+        top: 0.75rem;
+    }
+    
+    .tracker-textarea {
+        border: 1px solid var(--border);
+        padding: 0.5rem;
+        font-size: 0.85rem;
+        min-height: 60px;
+        background: #faf8f3;
+        color: var(--deep-indigo);
+    }
+    
+    .tracker-textarea-container {
+        position: relative;
+    }
+    
+    .tracker-mic {
+        position: absolute;
+        right: 0.25rem;
+        top: 0.25rem;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--deep-indigo);
+        transition: all 0.2s;
+    }
+    
+    .tracker-mic:hover {
+        transform: scale(1.1);
+    }
+    
+    .tracker-mic.recording {
+        background: #e74c3c;
+        color: white;
+        animation: pulse 1.5s infinite;
+    }
+    
+    .indigo { color: var(--deep-indigo); }
+    .gold { color: var(--gold); }
+    .indigo-bg { background: var(--deep-indigo); }
+    .gold-bg { background: var(--gold); }
+    
+    .btn {
+        padding: 0.75rem 1.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
+    }
+    
+    .btn-primary {
+        background: var(--deep-indigo);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background: #0f0f1e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(26, 26, 46, 0.3);
+    }
+    
+    .btn-gold {
+        background: linear-gradient(135deg, var(--gold) 0%, #e8d084 100%);
+        color: var(--deep-indigo);
+        font-weight: 700;
+    }
+    
+    .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+    }
+    
+    .btn-secondary {
+        background: white;
+        color: var(--text-primary);
+        border: 1.5px solid var(--border);
+    }
+    
+    .btn-secondary:hover {
+        background: var(--cream-dark);
+        border-color: var(--gold);
+    }
+    
+    .btn-small {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .progress-bar {
+        height: 6px;
+        background: rgba(212, 175, 55, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--gold) 0%, #f4d35e 100%);
+        transition: width 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+    
+    .section-divider {
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        margin: 3rem 0;
+        position: relative;
+    }
+    
+    .section-divider::after {
+        content: '◆';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--cream);
+        color: var(--gold);
+        padding: 0 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .premium-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(26, 26, 46, 0.08);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+    }
+    
+    .premium-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(26, 26, 46, 0.15);
+    }
+    
+    .toc-item {
+        padding: 1.25rem 1.25rem;
+        border-bottom: 1px dashed var(--border);
+        transition: all 0.2s ease;
+        cursor: pointer;
+        background: var(--cream);
+    }
+    
+    .toc-item:hover {
+        background: rgba(212, 175, 55, 0.08);
+        padding-left: 1.75rem;
+    }
+    
+    .toc-item:last-child {
+        border-bottom: none;
+    }
+    
+    .toc-number {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--deep-indigo);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+    
+    .toc-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--deep-indigo);
+        margin-bottom: 0.25rem;
+    }
+    
+    .toc-subtitle {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        font-style: italic;
+    }
+    
+    .toc-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    
+    .toc-dots {
+        flex: 1;
+        border-bottom: 2px dotted var(--gold);
+        opacity: 0.4;
+        margin-bottom: 0.4rem;
+        min-width: 2rem;
+    }
+    
+    .toc-page {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: var(--deep-indigo);
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+    
+    .ornament {
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        margin: 1.5rem auto;
+    }
+    
+    .prompt-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold) 0%, #e8d084 100%);
+        color: white;
+        font-weight: 700;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+    }
+    
+    .twin-card {
+        background: white;
+        border: 2px solid var(--gold);
+        border-radius: 12px;
+        padding: 2rem 1.5rem;
+        min-height: 3in;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .twin-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
+    }
+    
+    .tracker-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin-top: 1rem;
+    }
+    
+    .tracker-table th {
+        background: var(--deep-indigo);
+        color: white;
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-align: left;
+    }
+    
+    .tracker-table td {
+        border: 1px solid var(--border);
+        padding: 0.5rem;
+        background: white;
+        vertical-align: top;
+    }
+    
+    .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.75rem;
+        color: var(--gold);
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        transition: all 0.2s;
+    }
+    
+    .copy-btn:hover {
+        background: rgba(212, 175, 55, 0.1);
+    }
+    
+    .angle-dropdown {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+        border: 1.5px solid var(--gold);
+        border-radius: 8px;
+    }
+    
+    .angle-dropdown label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+    }
+    
+    .selected-prompt {
+        margin-top: 0.75rem;
+        padding: 0.75rem;
+        background: rgba(212, 175, 55, 0.08);
+        border-left: 3px solid var(--gold);
+        border-radius: 4px;
+        font-style: italic;
+        color: var(--deep-indigo);
+    }
+    
+    .speech-alert {
+        position: fixed;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--deep-indigo);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: none;
+    }
+    
+    @media (min-width: 768px) {
+        .page { padding: 3rem 2rem; }
+    }
+    
+    @media (max-width: 390px) {
+        .page { padding: 1.5rem 0.75rem; }
+        h2 { font-size: 1.75rem !important; }
+        .toc-number { font-size: 1.5rem; }
+        .toc-title { font-size: 1.125rem; }
+        .toc-subtitle { font-size: 0.8rem; }
+    }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Navigation -->
+<div class="no-print fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-lg border-b border-[var(--border)] shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg gold-foil flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-lg serif">TS</span>
+                </div>
+                <div class="hidden sm:block">
+                    <p class="text-xs text-gray-500 leading-tight tracking-wider uppercase">The Twin Story Method™</p>
+                    <p class="text-base font-bold leading-tight indigo serif">Finding Faith in Nothing</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <button onclick="prevPage()" class="btn btn-secondary text-sm">← Previous</button>
+                <div class="flex items-center gap-2 px-4">
+                    <i data-lucide="book-open" class="w-4 h-4 text-gray-400"></i>
+                    <span id="pageNum" class="text-sm font-semibold indigo">1</span>
+                    <span class="text-gray-400 text-sm">of</span>
+                    <span id="totalPages" class="text-sm text-gray-500">83</span>
+                </div>
+                <button onclick="nextPage()" class="btn btn-gold text-sm">Next →</button>
+            </div>
+        </div>
+        
+        <div class="mt-3 progress-bar">
+            <div id="progressFill" class="progress-fill" style="width: 1.2%"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Speech Alert -->
+<div id="speechAlert" class="speech-alert no-print">
+    <i data-lucide="mic" class="w-4 h-4 inline mr-2"></i>
+    <span id="alertText">Listening...</span>
+</div>
+
+<!-- Page 1: Cover -->
+<div class="page active" data-page="1">
+    <div class="max-w-5xl mx-auto pt-24 sm:pt-28 min-h-screen flex flex-col justify-center relative">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-32 h-32 border border-[var(--gold)] opacity-20 rotate-45"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 border border-[var(--gold)] opacity-10 rotate-12"></div>
+        </div>
+        
+        <div class="text-center space-y-10 relative z-10">
+            <div class="space-y-6">
+                <div class="inline-block">
+                    <p class="text-xs tracking-[0.4em] uppercase text-gray-500 font-medium mb-2">A Premium Digital Workbook</p>
+                    <div class="ornament"></div>
+                </div>
+                
+                <h1 class="text-6xl sm:text-8xl md:text-9xl font-bold leading-none">
+                    <span class="indigo">The Twin Story</span><br/>
+                    <span class="gold-gradient">Method<span class="text-4xl sm:text-5xl align-top">™</span></span>
+                </h1>
+                
+                <div class="flex items-center justify-center gap-4 my-8">
+                    <div class="h-px w-20 gold-bg"></div>
+                    <div class="w-2 h-2 gold-bg rotate-45"></div>
+                    <div class="h-px w-20 gold-bg"></div>
+                </div>
+                
+                <h2 class="text-2xl sm:text-4xl serif-italic text-gray-700">Finding Faith in Nothing</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto py-16 relative">
+                <div class="absolute -top-12 -left-8 text-[10rem] serif leading-none gold opacity-10">"</div>
+                <p class="text-2xl sm:text-3xl leading-relaxed text-gray-700 serif-italic relative z-10">
+                    Every story has a twin.<br/>
+                    The story you tell yourself...<br/>
+                    and the story you <span class="gold font-semibold">never considered</span>.
+                </p>
+                <div class="absolute -bottom-12 -right-8 text-[10rem] serif leading-none gold opacity-10 rotate-180">"</div>
+            </div>
+            
+            <div class="pt-12 space-y-6">
+                <p class="text-xl text-gray-600 serif-italic">Faith is found when certainty disappears.</p>
+                
+                <div class="flex flex-wrap justify-center gap-6 pt-8">
+                    <div class="premium-card px-6 py-3">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Includes</p>
+                        <p class="text-lg font-bold indigo">50 Journal Pages</p>
+                    </div>
+                    <div class="premium-card px-6 py-3">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Includes</p>
+                        <p class="text-lg font-bold indigo">365 Prompts</p>
+                    </div>
+                    <div class="premium-card px-6 py-3">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Includes</p>
+                        <p class="text-lg font-bold indigo">30-Day Challenge</p>
+                    </div>
+                    <div class="premium-card px-6 py-3">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Includes</p>
+                        <p class="text-lg font-bold indigo">20 Twin Cards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-20 text-center">
+            <div class="inline-block premium-card px-8 py-4">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">By</p>
+                <p class="text-lg serif font-semibold indigo">The Twin Story Method™ Collective</p>
+            </div>
+            <p class="text-xs text-gray-400 mt-6">© 2024 The Twin Story Method™ | For Personal Use Only</p>
+        </div>
+    </div>
+</div>
+
+<!-- Page 2: Praise -->
+<div class="page" data-page="2">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">Praise for The Twin Story Method™</h2>
+            <div class="ornament"></div>
+        </div>
+        
+        <div class="space-y-8 text-gray-700">
+            <div class="premium-card p-8">
+                <p class="text-lg leading-relaxed mb-6">
+                    You picked up this workbook because part of you is tired of your own certainty. That story you keep telling about why things are the way they are? It might be true. And it might be a cage.
+                </p>
+                <p class="text-lg leading-relaxed mb-6">
+                    The Twin Story Method™ is not about positive thinking. It's not about manifesting. It's not about finding "the truth." It's about recognizing that truth is plural. That every moment contains multiple valid interpretations. That the story causing you suffering has a twin — one that might set you free.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    <span class="serif-italic text-xl">Faith is found when certainty disappears.</span> Not faith in outcomes. Not faith that things will work out. Faith in your ability to be okay no matter what story turns out to be true.
+                </p>
+            </div>
+            
+            <div class="premium-card p-8 bg-gradient-to-br from-[rgba(212,175,55,0.08)] to-transparent border-l-4 border-[var(--gold)]">
+                <div class="flex items-start gap-4">
+                    <i data-lucide="alert-circle" class="w-6 h-6 gold flex-shrink-0 mt-1"></i>
+                    <div>
+                        <h4 class="font-bold indigo mb-2">Before You Begin</h4>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            This work can surface old pain. If you have a history of trauma, severe anxiety, or depression, consider using this workbook alongside a licensed mental health professional. The twin story is powerful. Use it wisely. For immediate support, contact a crisis helpline or your healthcare provider.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 3: Table of Contents -->
+<div class="page" data-page="3">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">Table of Contents</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic">Navigate your journey through faith in nothing</p>
+        </div>
+        
+        <div class="premium-card p-8">
+            <div class="toc-item" onclick="goToPage(1)">
+                <div class="toc-number">01</div>
+                <div class="toc-title">Cover</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Welcome to the practice</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">1</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(2)">
+                <div class="toc-number">02</div>
+                <div class="toc-title">Praise for The Twin Story Method™</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Before you begin</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">2</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(4)">
+                <div class="toc-number">04</div>
+                <div class="toc-title">Core Philosophy</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Every story has a twin</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">4</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(5)">
+                <div class="toc-number">05</div>
+                <div class="toc-title">How to Use This Workbook</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Three rules of practice</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">5</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(6)">
+                <div class="toc-number">06-55</div>
+                <div class="toc-title">Twin Story Journal</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">50 guided journal entries</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">6</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(56)">
+                <div class="toc-number">56</div>
+                <div class="toc-title">365 Twin Story Prompts</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Interactive dropdown</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">56</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(57)">
+                <div class="toc-number">57-66</div>
+                <div class="toc-title">Faith in Nothing: 30-Day Challenge</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Daily</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">57</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(67)">
+                <div class="toc-number">67-71</div>
+                <div class="toc-title">Twin Story Cards (Printable)</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">20 pull-cards for emergency use</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">67</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(72)">
+                <div class="toc-number">72-81</div>
+                <div class="toc-title">Reflection Tracker</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Track your certainty shifts</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">72</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(82)">
+                <div class="toc-number">82</div>
+                <div class="toc-title">About the Author</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">The story behind the method</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">82</div>
+                </div>
+            </div>
+            
+            <div class="toc-item" onclick="goToPage(83)">
+                <div class="toc-number">83</div>
+                <div class="toc-title">Continue Your Practice</div>
+                <div class="toc-row">
+                    <div class="toc-subtitle">Daily use</div>
+                    <div class="toc-dots"></div>
+                    <div class="toc-page">83</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 premium-card p-6 text-center">
+            <p class="text-sm text-gray-600 serif-italic">
+                <i data-lucide="printer" class="w-4 h-4 inline mr-2 gold"></i>
+                This workbook is fully printable. Use Ctrl+P / Cmd+P to print pages.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Page 4: Core Philosophy -->
+<div class="page" data-page="4">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">Every Story Has a Twin</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic text-lg">The Core Philosophy</p>
+        </div>
+        
+        <div class="space-y-8 text-gray-700">
+            <div class="premium-card p-8">
+                <h3 class="text-2xl serif mb-4 gold">The Philosophy</h3>
+                <div class="space-y-4 text-lg leading-relaxed">
+                    <p>
+                        Your mind is a meaning-making machine. Every second, it takes raw data — sensations, events, words — and converts them into story. "They didn't text back" becomes "They're mad at me." "I didn't get the job" becomes "I'm not good enough."
+                    </p>
+                    <p>
+                        These stories feel like facts. They arrive fully formed, with emotional charge. But here's what we've forgotten: <span class="font-bold indigo">The story is not the event. The story is your interpretation of the event.</span>
+                    </p>
+                    <p>
+                        For every interpretation that causes suffering, there exists at least one other interpretation that could bring peace. That's the twin story. Not a lie you tell yourself. A twin story is an alternative meaning that is equally supported by the evidence — you're just not used to seeing it.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="premium-card p-8">
+                <h3 class="text-2xl serif mb-4 gold">How Twin Stories Work</h3>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full indigo-bg text-white flex items-center justify-center font-bold serif flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold indigo mb-2">Name Story #1</h4>
+                            <p class="text-gray-700">This is the familiar narrative. The one that feels true, obvious, inevitable. Write it down without censoring. "I was rejected because I'm unlovable." Let it speak.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full border-3 border-[var(--gold)] text-[var(--gold)] flex items-center justify-center font-bold serif flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold indigo mb-2">Invite the Twin</h4>
+                            <p class="text-gray-700">Ask yourself: "What else could be true here?" If you had to argue the opposite, what evidence would you use? "I was rejected because they couldn't see my worth." The twin doesn't have to feel true yet. It just has to be possible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-full gold-foil text-white flex items-center justify-center font-bold serif flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold indigo mb-2">Hold Both Lightly</h4>
+                            <p class="text-gray-700">This is where faith enters. You don't choose the twin story because it's "better." You hold both stories without needing either to be the capital-T Truth. In that space between certainties, possibility returns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 5: How to Use -->
+<div class="page" data-page="5">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">How to Use This Workbook</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic text-lg">Your guide to practicing faith in nothing</p>
+        </div>
+        
+        <div class="space-y-8">
+            <div class="premium-card p-8">
+                <h3 class="text-2xl serif mb-6 gold text-center">The Three Rules</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full gold-foil text-white flex items-center justify-center font-bold serif flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold indigo mb-1">Don't Bypass Story #1</h4>
+                            <p class="text-gray-700">Name the painful story first. Let it be witnessed. Only then invite its twin.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full gold-foil text-white flex items-center justify-center font-bold serif flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold indigo mb-1">The Twin Doesn't Have to Feel True</h4>
+                            <p class="text-gray-700">You're not trying to convince yourself. You're expanding possibility.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-8 h-8 rounded-full gold-foil text-white flex items-center justify-center font-bold serif flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold indigo mb-1">Hold Both, Choose Neither</h4>
+                            <p class="text-gray-700">The power isn't in believing the twin. It's in not needing Story #1 to be the only truth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-card p-8">
+                <h3 class="text-2xl serif mb-4 gold">Weekly Practice</h3>
+                <p class="text-gray-700 mb-4">1. Complete 2-3 journal entries per week. 2. Pull one prompt daily. 3. Use the 30-day challenge when you feel stuck. 4. Track your shifts in the tracker.</p>
+                <div class="p-4 bg-[var(--cream-dark)] rounded-lg">
+                    <p class="text-sm serif-italic text-gray-700">Remember: You are not doing this to feel better. You are doing this to be free.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pages 6-55: Twin Story Journal Pages - WITH TEXTAREA + MIC -->
+<script>
+const journalData = [
+    { title: 'Redirection', s1: 'I was rejected because I\'m not good enough.', s2: 'What if I was redirected instead?', angles: ["What if this closed door protects me?", "What if rejection is redirection?", "What if no is making room for yes?", "What if this detour is the path?", "What if I'm being steered, not stopped?", "What if this 'no' is guidance?", "What if I'm being rerouted to better?"] },
+    { title: 'Failure', s1: 'I failed.', s2: 'What if I learned something success never could teach me?', angles: ["What if this is data, not destiny?", "What if failure is tuition?", "What if this ending teaches what success couldn't?", "What if I gained wisdom, not shame?", "What if this is research, not rejection?", "What if I just collected information?", "What if this builds resilience?"] },
+    { title: 'Timing', s1: 'I\'m behind in life.', s2: 'What if my timing is protecting me from something?', angles: ["What if there's no such thing as behind?", "What if I'm on time for my life?", "What if comparison is the thief here?", "What if my pace is perfect for my path?", "What if 'late' is a story about timing?", "What if I'm exactly where I need to be?", "What if slowness equals wisdom?"] },
+    { title: 'Starting Over', s1: 'I\'m too old to start over.', s2: 'What if experience is my advantage?', angles: ["What if I start from experience?", "What if age is an asset?", "What if 'over' means 'again with wisdom'?", "What if I get to begin as a beginner again?", "What if every ending is also beginning?", "What if my past prepares me for this?", "What if wisdom starts now?"] },
+    { title: 'Being Understood', s1: 'Nobody understands me.', s2: 'What if I\'m meant to understand myself first?', angles: ["What if I stop outsourcing understanding?", "What if I need to understand me first?", "What if being misunderstood is freedom?", "What if I validate myself?", "What if understanding comes from within?", "What if I don't need to be explained?", "What if self-understanding is enough?"] },
+    { title: 'Ruin & Space', s1: 'I ruined everything.', s2: 'What if I cleared space for what\'s next?', angles: ["What if I created room for better?", "What if destruction precedes creation?", "What if I cleared the canvas?", "What if 'ruined' means 'renovated'?", "What if I made space?", "What if this clears the field?", "What if demolition serves construction?"] },
+    { title: 'Too Late', s1: 'It\'s too late.', s2: 'What if \'late\' is just a story about timing?', angles: ["What if there's still time?", "What if late means 'now'?", "What if I start from here?", "What if time is made-up?", "What if the door isn't closed?", "What if today is early?", "What if timing is irrelevant?"] },
+    { title: 'Talent vs Consistency', s1: 'I\'m not talented enough.', s2: 'What if consistency beats talent?', angles: ["What if I show up anyway?", "What if practice creates talent?", "What if effort is the gift?", "What if talent is a myth?", "What if consistency is the talent?", "What if repetition builds genius?", "What if showing up is enough?"] },
+    { title: 'Identity', s1: 'I don\'t know who I am anymore.', s2: 'What if I\'m meeting myself for the first time?', angles: ["What if identity is fluid?", "What if not knowing is becoming?", "What if I'm between versions?", "What if I'm becoming, not lost?", "What if identity unfolds?", "What if I'm composting an old self?", "What if this is initiation?"] },
+    { title: 'Not Enough', s1: 'I am not enough.', s2: 'What if I am enough, and growing?', angles: ["What if I am enough right now?", "What if enough is a fact, not a feeling?", "What if I was always enough?", "What if enough and growing coexist?", "What if I was born enough?", "What if enough is my birthright?", "What if I don't need to earn enough?"] },
+    { title: 'Abandonment', s1: 'They left me.', s2: 'What if they freed me?', angles: ["What if their leaving was a gift?", "What if I needed this space?", "What if they couldn't stay for me?", "What if I released them?", "What if freedom requires leaving?", "What if this clears my field?", "What if I chose me by letting go?"] },
+    { title: 'Success', s1: 'Success means I\'ll be alone.', s2: 'What if success means I attract my people?', angles: ["What if the right people love my success?", "What if I outgrew, not lost?", "What if success filters for me?", "What if my tribe celebrates me?", "What if success connects me?", "What if I belong at the top?", "What if my people are waiting?"] },
+    { title: 'Body Image', s1: 'My body is wrong.', s2: 'What if my body is honest?', angles: ["What if my body is neutral?", "What if my body is my home?", "What if wrong is a story?", "What if my body is wise?", "What if I made peace with this vessel?", "What if this body carries me?", "What if my body tells the truth?"] },
+    { title: 'Money', s1: 'I never have enough money.', s2: 'What if I have enough for what I need today?', angles: ["What if I track what's here?", "What if enough is today?", "What if scarcity is a story?", "What if I'm resourced?", "What if today is funded?", "What if I see what's present?", "What if I have what I need now?"] },
+    { title: 'Comparison', s1: 'Everyone else is ahead of me.', s2: 'What if we\'re on different paths?', angles: ["What if there is no ahead?", "What if I run my own race?", "What if comparison is theft?", "What if their win isn't my loss?", "What if we have different journeys?", "What if I stay in my lane?", "What if parallel is not behind?"] },
+    { title: 'Perfectionism', s1: 'If I\'m not perfect, I\'m worthless.', s2: 'What if I\'m valuable because I\'m imperfect?', angles: ["What if done beats perfect?", "What if perfect is the enemy?", "What if I'm worthy regardless?", "What if imperfection is human?", "What if worthy is not earned?", "What if progress beats perfection?", "What if I'm lovable as-is?"] },
+    { title: 'Boundaries', s1: 'Setting boundaries means I\'m selfish.', s2: 'What if boundaries mean I respect myself?', angles: ["What if boundaries are kind?", "What if no is a complete sentence?", "What if I teach others how to treat me?", "What if boundaries create safety?", "What if self-respect is not selfish?", "What if limits protect connection?", "What if I matter too?"] },
+    { title: 'Forgiveness', s1: 'I can\'t forgive them.', s2: 'What if forgiveness is freedom for me?', angles: ["What if forgiveness is for me?", "What if I release the hook?", "What if I deserve peace?", "What if forgiveness is not condoning?", "What if I drop the stone?", "What if resentment chains me?", "What if I set myself free?"] },
+    { title: 'Trust', s1: 'I can\'t trust anyone.', s2: 'What if I can trust myself to handle betrayal?', angles: ["What if I trust my discernment?", "What if I trust my recovery?", "What if I trust my resourcing?", "What if I trust my boundaries?", "What if I trust my ability to heal?", "What if self-trust is the key?", "What if I can handle hurt?"] },
+    { title: 'Control', s1: 'I need to control everything.', s2: 'What if I can control only my response?', angles: ["What if I control my effort?", "What if I control my attitude?", "What if control is an illusion?", "What if surrender is strength?", "What if I trust the process?", "What if I manage my side only?", "What if response is my power?"] },
+    { title: 'Vulnerability', s1: 'Vulnerability makes me weak.', s2: 'What if vulnerability is my superpower?', angles: ["What if vulnerability is courage?", "What if I connect through softness?", "What if armor is heavy?", "What if truth is strong?", "What if openness is brave?", "What if vulnerability creates intimacy?", "What if soft is strong?"] },
+    { title: 'Rejection in Love', s1: 'They didn\'t choose me.', s2: 'What if I chose myself by letting them go?', angles: ["What if they weren't my person?", "What if this frees me for right?", "What if I choose me now?", "What if rejection protects?", "What if incompatibility saved us?", "What if I'm meant for more?", "What if this is alignment?"] },
+    { title: 'Career Change', s1: 'Changing careers means I failed.', s2: 'What if changing careers means I evolved?', angles: ["What if I pivoted?", "What if I'm multi-passionate?", "What if evolution is allowed?", "What if Chapter 2 is here?", "What if failure is feedback?", "What if I'm reinventing?", "What if growth requires moves?"] },
+    { title: 'Aging', s1: 'I\'m getting old.', s2: 'What if I\'m getting wise?', angles: ["What if age is perspective?", "What if I ripen, not rot?", "What if years add value?", "What if I'm seasoning?", "What if wisdom is beautiful?", "What if I deepen with time?", "What if old equals experienced?"] },
+    { title: 'Grief', s1: 'I\'ll never be happy again.', s2: 'What if grief is love with nowhere to go?', angles: ["What if grief is praise?", "What if joy returns?", "What if I hold both?", "What if healing isn't forgetting?", "What if grief moves through?", "What if love remains?", "What if happiness evolves?"] },
+    { title: 'Parent Wounds', s1: 'My parents ruined me.', s2: 'What if my parents did their best with what they had?', angles: ["What if they were wounded too?", "What if I re-parent myself?", "What if I break the cycle?", "What if I needed that contrast?", "What if I parent me now?", "What if I'm the cycle-breaker?", "What if I give myself what I needed?"] },
+    { title: 'Friendship Breakup', s1: 'Friends always leave.', s2: 'What if friendships have seasons?', angles: ["What if people expire?", "What if seasons change?", "What if I needed to grow alone?", "What if quality over quantity?", "What if new friends await?", "What if I outgrew?", "What if endings clear space?"] },
+    { title: 'Public Failure', s1: 'Everyone saw me fail.', s2: 'What if everyone saw me try?', angles: ["What if they saw courage?", "What if trying is brave?", "What if most didn't notice?", "What if I inspired someone?", "What if failure is public learning?", "What if trying beats hiding?", "What if I showed up?"] },
+    { title: 'Creative Block', s1: 'I\'ve lost my creativity.', s2: 'What if I\'m incubating?', angles: ["What if I'm resting?", "What if fallow is fertile?", "What if capacity is refilling?", "What if I'm gathering?", "What if winter precedes spring?", "What if I'm composting ideas?", "What if stillness breeds creation?"] },
+    { title: 'Spiritual Doubt', s1: 'I\'ve lost my faith.', s2: 'What if I\'m finding a truer faith?', angles: ["What if doubt is sacred?", "What if I'm evolving belief?", "What if questioning is devotion?", "What if I'm finding my own faith?", "What if deconstruction builds?", "What if I need what's true for me?", "What if faith is allowed to change?"] },
+    { title: 'Burnout', s1: 'I can\'t keep up.', s2: 'What if I\'m being asked to rest?', angles: ["What if rest is resistance?", "What if I need less, not more?", "What if slow is sacred?", "What if I'm at capacity?", "What if stop is wise?", "What if pause is productive?", "What if I downshift?"] },
+    { title: 'Decision Paralysis', s1: 'What if I choose wrong?', s2: 'What if there is no wrong choice?', angles: ["What if any choice is information?", "What if I can course-correct?", "What if wrong is a myth?", "What if I learn either way?", "What if decision creates clarity?", "What if I'm resourced for consequences?", "What if I trust my recovery?"] },
+    { title: 'People Pleasing', s1: 'I have to make everyone happy.', s2: 'What if my only job is to be authentic?', angles: ["What if I disappoint to be free?", "What if my happiness counts?", "What if I can't control others' feelings?", "What if pleasing costs me?", "What if authenticity is service?", "What if I matter too?", "What if no is kindness?"] },
+    { title: 'Loneliness', s1: 'I am alone.', s2: 'What if I am in solitude with myself?', angles: ["What if alone is sacred?", "What if I enjoy me?", "What if this is self-intimacy?", "What if solitude is teacher?", "What if I'm dating myself?", "What if I become my own best company?", "What if alone is not lonely?"] },
+    { title: 'Anger', s1: 'My anger is dangerous.', s2: 'What if my anger is information?', angles: ["What if anger is boundary?", "What if anger is protection?", "What if I listen to anger?", "What if anger shows what matters?", "What if anger is energy?", "What if I channel it?", "What if anger is clarity?"] },
+    { title: 'Shame', s1: 'I am shameful.', s2: 'What if I did something I regret, but I am not my regret?', angles: ["What if I separate act from self?", "What if I made mistakes, but I'm not one?", "What if shame is not truth?", "What if I deserve compassion?", "What if I did my best then?", "What if I can learn and release?", "What if I forgive myself?"] },
+    { title: 'Jealousy', s1: 'Their success diminishes me.', s2: 'What if their success shows me what\'s possible?', angles: ["What if I celebrate them?", "What if their win points to mine?", "What if abundance is real?", "What if I bless and release?", "What if I use it as inspiration?", "What if we all can win?", "What if I admire instead?"] },
+    { title: 'Imposter Syndrome', s1: 'I don\'t deserve to be here.', s2: 'What if I belong because I showed up?', angles: ["What if I'm learning publicly?", "What if I'm the beginner I needed?", "What if everyone starts somewhere?", "What if I earn as I go?", "What if I'm qualified enough?", "What if being here is proof?", "What if I deserve this seat?"] },
+    { title: 'Rest', s1: 'Rest is lazy.', s2: 'What if rest is productive?', angles: ["What if rest is repair?", "What if I rest to create?", "What if stillness is strategy?", "What if recovery is work?", "What if I need to refill?", "What if rest prevents crash?", "What if I'm human, not machine?"] },
+    { title: 'Change', s1: 'Change is unsafe.', s2: 'What if change is alive?', angles: ["What if safety is in adapting?", "What if change is growth?", "What if I trust my resilience?", "What if I can handle new?", "What if change means I'm living?", "What if stillness is the risk?", "What if I'm built for evolution?"] },
+    { title: 'Uncertainty', s1: 'I need to know what\'s next.', s2: 'What if not knowing is where magic lives?', angles: ["What if mystery is beautiful?", "What if I trust emergence?", "What if I live the questions?", "What if not knowing is faith?", "What if I stay in the question?", "What if certainty limits possibility?", "What if I breathe into unknown?"] },
+    { title: 'Self-Sabotage', s1: 'I always ruin good things.', s2: 'What if I\'m testing if I can handle good?', angles: ["What if I deserve good?", "What if I'm learning to receive?", "What if I'm afraid of success?", "What if I expand capacity?", "What if I let good stay?", "What if I stop the pattern now?", "What if I can hold abundance?"] },
+    { title: 'Hope', s1: 'It\'s naive to hope.', s2: 'What if hope is courage?', angles: ["What if hope is rebellion?", "What if hope is wise?", "What if hope creates futures?", "What if I choose hope?", "What if hope is active?", "What if cynicism is the real naïveté?", "What if hope is strategic?"] },
+    { title: 'Worthiness', s1: 'I have to earn my worth.', s2: 'What if I was born worthy?', angles: ["What if worth is inherent?", "What if I don't perform for love?", "What if I pre-exist enough?", "What if worth isn't transactional?", "What if I already am?", "What if worth is birthright?", "What if I stop auditioning?"] },
+    { title: 'Becoming', s1: 'I\'m not there yet.', s2: 'What if I\'m exactly where I need to be to become?', angles: ["What if the path is the point?", "What if here is holy?", "What if arrival is now?", "What if becoming never ends?", "What if I'm complete and evolving?", "What if this moment is it?", "What if there is no 'there'?"] },
+    { title: 'Silence', s1: 'Silence means something is wrong.', s2: 'What if silence means peace?', angles: ["What if silence is space?", "What if quiet is kind?", "What if silence is rest?", "What if I like the quiet?", "What if nothing is wrong?", "What if silence is sacred?", "What if peace sounds like this?"] },
+    { title: 'Visibility', s1: 'If I\'m seen, I\'ll be judged.', s2: 'What if being seen means being free?', angles: ["What if the right people see love?", "What if I survived judgment before?", "What if hiding is heavy?", "What if visibility is service?", "What if I matter?", "What if I get to be here?", "What if being seen is liberation?"] },
+    { title: 'Pace', s1: 'I\'m moving too slowly.', s2: 'What if I\'m moving at the speed of wisdom?', angles: ["What if slow is intentional?", "What if I trust my rhythm?", "What if fast isn't better?", "What if I savor instead of rush?", "What if slow is sustainable?", "What if my pace is perfect?", "What if I'm walking, not racing?"] },
+    { title: 'Endings', s1: 'This ending is a tragedy.', s2: 'What if this ending is a beginning in disguise?', angles: ["What if I needed this close?", "What if this frees me?", "What if endings are mercies?", "What if completion is celebration?", "What if I thanked this chapter?", "What if this ending chose me?", "What if this is graduation?"] },
+    { title: 'Beginnings', s1: 'I don\'t know how to start.', s2: 'What if starting means taking one tiny step?', angles: ["What if I start messy?", "What if I start small?", "What if I start with what I have?", "What if starting is breath?", "What if I begin here?", "What if one step is enough?", "What if today is Day 1?"] }
+];
+
+journalData.forEach((story, idx) => {
+    const pageNum = idx + 6;
+    const entryNum = idx + 1;
+    const optionsHtml = story.angles.map(a => `<option value="${a}">${a}</option>`).join('');
+    
+    document.write(`
+<div class="page" data-page="${pageNum}">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="flex items-baseline justify-between mb-3">
+            <h2 class="text-4xl sm:text-5xl">Twin Story Journal</h2>
+            <span class="text-sm text-gray-500 premium-card px-4 py-2">Page ${entryNum} of 50</span>
+        </div>
+        <div class="h-1 w-24 gold-bg mb-10"></div>
+        <div class="space-y-8">
+            <div class="text-center mb-8"><h3 class="text-3xl serif gold">${story.title}</h3></div>
+            
+            <div class="premium-card p-8 bg-gradient-to-br from-[var(--cream-dark)] to-white">
+                <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg indigo-bg text-white flex items-center justify-center text-lg font-bold serif">1</div><h3 class="text-2xl font-bold indigo">Story #1: The Familiar Narrative</h3></div>
+                <p class="text-sm text-gray-600 italic mb-4">Prompt: ${story.s1}</p>
+                <div class="journal-group">
+                    <div class="textarea-container">
+                        <textarea id="journal-${pageNum}-story1" class="journal-textarea speech-target" data-label="Story #1" placeholder="Let the story speak..."></textarea>
+                        <button class="mic-btn no-print" data-target="journal-${pageNum}-story1" aria-label="Voice input">
+                            <i data-lucide="mic" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-card p-8 bg-gradient-to-br from-[rgba(212,175,55,0.08)] to-[rgba(212,175,55,0.02)] border-2 border-[rgba(212,175,55,0.3)]">
+                <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg border-3 border-[var(--gold)] text-[var(--gold)] flex items-center justify-center text-lg font-bold serif">2</div><h3 class="text-2xl font-bold indigo">The Twin Story</h3></div>
+                <div class="angle-dropdown">
+                    <label>Need a different angle?</label>
+                    <select onchange="showSelectedPrompt(this, ${pageNum})">
+                        <option value="">Select an alternative reframe...</option>
+                        ${optionsHtml}
+                    </select>
+                    <div id="selected-prompt-${pageNum}" class="selected-prompt" style="display:none;"></div>
+                </div>
+                <p class="text-sm text-gray-600 italic mb-4">Prompt: ${story.s2}</p>
+                <div class="journal-group">
+                    <div class="textarea-container">
+                        <textarea id="journal-${pageNum}-twin" class="journal-textarea speech-target" data-label="Twin Story" placeholder="Invite the twin..."></textarea>
+                        <button class="mic-btn no-print" data-target="journal-${pageNum}-twin" aria-label="Voice input">
+                            <i data-lucide="mic" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-card p-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wider flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 gold"></i>Reflection: What shifts when you hold both?</label>
+                <div class="textarea-container">
+                    <textarea id="journal-${pageNum}-reflection" class="journal-textarea speech-target" data-label="Reflection" placeholder="What shifts?"></textarea>
+                    <button class="mic-btn no-print" data-target="journal-${pageNum}-reflection" aria-label="Voice input">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="premium-card p-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wider flex items-center gap-2"><i data-lucide="arrow-right" class="w-4 h-4 gold"></i>Action: One small step from the Twin Story</label>
+                <div class="textarea-container">
+                    <textarea id="journal-${pageNum}-action" class="journal-textarea speech-target" data-label="Action" placeholder="One small step..."></textarea>
+                    <button class="mic-btn no-print" data-target="journal-${pageNum}-action" aria-label="Voice input">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`);
+});
+</script>
+
+<!-- Page 56: 365 Prompts -->
+<script>
+const promptsByMonth = {
+    'January': ['What story are you defending?', 'What story are you avoiding?', 'What would the opposite interpretation be?', 'Where are you absolutely certain?', 'What if you are wrong?', 'What does your inner critic say?', 'What would your wisest self say?', 'What story keeps you stuck?', 'What story sets you free?', 'What are you afraid is true?', 'What are you afraid is not true?', 'What if both are true?', 'What if neither is true?', 'What if the story is the problem?', 'What if you are not the story?', 'What meaning are you making?', 'What other meaning could you make?', 'What if it means nothing?', 'What if it means everything?', 'Who told you that story?', 'Is it your story or theirs?', 'What story were you taught?', 'What story are you teaching yourself?', 'What story do you need to break up with?', 'What story are you addicted to?', 'What story gives you an identity?', 'What story takes your power?', 'What story are you telling your body?', 'What story are you telling your heart?', 'What story are you telling the world?', 'What story brings you peace?'],
+    'February': ['What if peace is not the goal?', 'What if freedom is the goal?', 'What story would freedom tell?', 'What story would love tell?', 'What story would fear tell?', 'What story would a child tell?', 'What story would your elder self tell?', 'What story would a stranger tell?', 'What story would nature tell?', 'What story do you tell at night?', 'What story do you wake up believing?', 'What story do you tell yourself in the mirror?', 'What story do you tell when nobody\'s listening?', 'What story do you tell when everyone\'s listening?', 'What if this moment is neutral?', 'What if this moment is sacred?', 'What if this moment is all there is?', 'What story lives in your shoulders?', 'What story lives in your belly?', 'What story lives in your breath?', 'What story are you breathing?', 'What story are you ready to release?', 'What story are you ready to keep?', 'What story are you ready to rewrite?', 'What story would surprise you?', 'What story would delight you?', 'What story would scare you?', 'What story would heal you?', 'What story would break you open?'],
+    'March': ['What story are you done telling?', 'What story are you excited to tell?', 'What story are you ashamed of?', 'What story are you proud of?', 'What story feels like home?', 'What story feels like prison?', 'What story feels like the truth?', 'What story feels like a lie?', 'What story feels like yesterday?', 'What story feels like tomorrow?', 'What story feels like now?', 'What story are you living?', 'What story are you performing?', 'What story are you becoming?', 'What story are you unbecoming?', 'What story are you between?', 'What story lives in the in-between?', 'What story lives in the unknown?', 'What story lives in the void?', 'What story lives in the silence?', 'What story lives in the noise?', 'What story lives in the body?', 'What story lives in the mind?', 'What story lives in the spirit?', 'What story connects all three?', 'What story divides all three?', 'What story wants to be born?', 'What story wants to die?', 'What story wants to be witnessed?', 'What story wants to be forgiven?', 'What story wants to forgive?'],
+    'April': ['What story wants to be loved?', 'What story wants to love?', 'What story wants to be free?', 'What story wants to rest?', 'What story wants to play?', 'What story wants to cry?', 'What story wants to scream?', 'What story wants to sing?', 'What story wants to dance?', 'What story wants to be still?', 'What story wants to move?', 'What story wants to arrive?', 'What story wants to leave?', 'What story wants to stay?', 'What story are you holding too tightly?', 'What story are you holding too loosely?', 'What story are you not holding at all?', 'What story is holding you?', 'What story has let you go?', 'What story needs your attention?', 'What story needs to be ignored?', 'What story needs to be questioned?', 'What story needs to be trusted?', 'What story needs to be doubted?', 'What story is asking for your faith?', 'What story is asking for your doubt?', 'What story is asking for both?', 'What story is asking for neither?', 'What story is asking for something else?', 'What story would your body tell if it could speak?'],
+    'May': ['What story would your heart tell if it could sing?', 'What story would your soul tell if it could whisper?', 'What story would the earth tell if it could rumble?', 'What story would the sky tell if it could pour?', 'What story would the wind tell if it could howl?', 'What story would the fire tell if it could crackle?', 'What story would the water tell if it could flow?', 'What story would the trees tell if they could sway?', 'What story would the stars tell if they could twinkle?', 'What story are you telling the children?', 'What story are you telling the ancestors?', 'What story are you telling the future?', 'What story are you telling the past?', 'What story are you telling eternity?', 'What story are you telling time?', 'What story are you telling death?', 'What story are you telling life?', 'What story are you telling love?', 'What story are you telling pain?', 'What story are you telling joy?', 'What story are you telling anger?', 'What story are you telling hope?', 'What story are you telling despair?', 'What story are you telling yourself right now?', 'What story are you not telling yourself right now?', 'What story is hiding in plain sight?', 'What story is hiding in the shadows?', 'What story is hiding in your smile?', 'What story is hiding in your tears?', 'What story is hiding in your anger?', 'What story is hiding in your laughter?'],
+    'June': ['What story is hiding in your dreams?', 'What story is hiding in your nightmares?', 'What story is hiding in your waking?', 'What story is too small for you now?', 'What story is too big for you now?', 'What story fits you perfectly now?', 'What story are you growing into?', 'What story are you growing out of?', 'What story are you borrowing?', 'What story are you lending?', 'What story are you giving away?', 'What story are you keeping secret?', 'What story are you ready to share?', 'What story would shock you?', 'What story would calm you?', 'What story would activate you?', 'What story would still you?', 'What story would shift everything?', 'What story would change nothing?', 'What story would end the search?', 'What story would begin the search?', 'What story would be the treasure?', 'What story would be the map?', 'What story would be the compass?', 'What story would be the destination?', 'What story would be the journey?', 'What story would be the traveler?', 'What story would be the road?', 'What story would be the sky?', 'What story would be the ground?'],
+    'July': ['What story would be the breath?', 'What story would be the heartbeat?', 'What story would be the silence?', 'What story would be the music?', 'What story would be the dance?', 'What story would be the stillness?', 'What story would be the chaos?', 'What story would be the order?', 'What story would be the light?', 'What story would be the dark?', 'What story would be the dawn?', 'What story would be the dusk?', 'What story would be the night?', 'What story would be the day?', 'What story would be the season?', 'What story would be the cycle?', 'What story would be the circle?', 'What story would be the spiral?', 'What story would be the line?', 'What story would be the point?', 'What story would be the everything?', 'What story would be the nothing?', 'What story would be the both?', 'What story would be the neither?', 'What story would be the maybe?', 'What story would be the always?', 'What story would be the never?', 'What story would be the sometimes?', 'What story would be the forever?', 'What story would be the now?', 'What story would be the then?'],
+    'August': ['What story would be the when?', 'What story would be the why?', 'What story would be the how?', 'What story would be the who?', 'What story would be the what?', 'What story would be the where?', 'What story would be the which?', 'What story would be the whose?', 'What story would be the whom?', 'What story would be the if?', 'What story would be the unless?', 'What story would be the except?', 'What story would be the because?', 'What story would be the although?', 'What story would be the however?', 'What story would be the therefore?', 'What story would be the meanwhile?', 'What story would be the instead?', 'What story would be the otherwise?', 'What story would be the besides?', 'What story would be the moreover?', 'What story would be the nevertheless?', 'What story would be the anyway?', 'What story would be the still?', 'What story would be the yet?', 'What story would be the already?', 'What story would be the not yet?', 'What story would be the almost?', 'What story would be the nearly?', 'What story would be the just?', 'What story would be the only?'],
+    'September': ['What story would be the ever?', 'What story would be the only ever?', 'What story would be the always already?', 'What story would be the not yet always?', 'What story would be the forever now?', 'What story would be the present past?', 'What story would be the future present?', 'What story would be the ancient new?', 'What story would be the old young?', 'What story would be the young old?', 'What story would be the broken whole?', 'What story would be the whole broken?', 'What story would be the perfect imperfect?', 'What story would be the imperfect perfect?', 'What story would be the enough more?', 'What story would be the more enough?', 'What story would be the empty full?', 'What story would be the full empty?', 'What story would be the loud quiet?', 'What story would be the quiet loud?', 'What story would be the fast slow?', 'What story would be the slow fast?', 'What story would be the heavy light?', 'What story would be the light heavy?', 'What story would be the dark bright?', 'What story would be the bright dark?', 'What story would be the close far?', 'What story would be the far close?', 'What story would be the here there?', 'What story would be the there here?'],
+    'October': ['What story would be the inside out?', 'What story would be the outside in?', 'What story would be the upside down?', 'What story would be the downside up?', 'What story would be the backward forward?', 'What story would be the forward backward?', 'What story would be the end beginning?', 'What story would be the beginning end?', 'What story would be the first last?', 'What story would be the last first?', 'What story would be the alpha omega?', 'What story would be the omega alpha?', 'What story would be the all nothing?', 'What story would be the nothing all?', 'What story would be the something everything?', 'What story would be the everything something?', 'What story would be the one many?', 'What story would be the many one?', 'What story would be the me you?', 'What story would be the you me?', 'What story would be the us them?', 'What story would be the them us?', 'What story would be the self other?', 'What story would be the other self?', 'What story would be the same different?', 'What story would be the different same?', 'What story would be the yes no?', 'What story would be the no yes?', 'What story would be the true false?', 'What story would be the false true?', 'What story would be the real unreal?'],
+    'November': ['What story would be the unreal real?', 'What story would be the known unknown?', 'What story would be the unknown known?', 'What story would be the seen unseen?', 'What story would be the unseen seen?', 'What story would be the heard unheard?', 'What story would be the unheard heard?', 'What story would be the felt unfelt?', 'What story would be the unfelt felt?', 'What story would be the lived unlived?', 'What story would be the unlived lived?', 'What story would be the told untold?', 'What story would be the untold told?', 'What story would be the written unwritten?', 'What story would be the unwritten written?', 'What story would be the spoken unspoken?', 'What story would be the unspoken spoken?', 'What story would be the sung unsung?', 'What story would be the unsung sung?', 'What story would be the danced undanced?', 'What story would be the undanced danced?', 'What story would be the remembered forgotten?', 'What story would be the forgotten remembered?', 'What story would be the loved unloved?', 'What story would be the unloved loved?', 'What story would be the lost found?', 'What story would be the found lost?', 'What story would be the hidden revealed?', 'What story would be the revealed hidden?', 'What story would be the open closed?'],
+    'December': ['What story would be the closed open?', 'What story would be the given taken?', 'What story would be the taken given?', 'What story would be the kept released?', 'What story would be the released kept?', 'What story would be the bound free?', 'What story would be the free bound?', 'What story would be the held let go?', 'What story would be the let go held?', 'What story would be the sure unsure?', 'What story would be the unsure sure?', 'What story would be the certain uncertain?', 'What story would be the uncertain certain?', 'What story would be the clear unclear?', 'What story would be the unclear clear?', 'What story would be the safe unsafe?', 'What story would be the unsafe safe?', 'What story would be the right wrong?', 'What story would be the wrong right?', 'What story would be the good bad?', 'What story would be the bad good?', 'What remains when certainty disappears?']
+};
+
+const allPrompts = [].concat(...Object.values(promptsByMonth));
+
+document.write(`
+<div class="page" data-page="56">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">365 Twin Story Prompts</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic">One prompt for every day of the year</p>
+        </div>
+        <div class="premium-card p-8 mb-8">
+            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between mb-6">
+                <div class="flex-1 w-full sm:w-auto">
+                    <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wider">Select Month</label>
+                    <select id="monthSelect" onchange="updatePrompts(this.value)" class="w-full">
+                        <option value="">Choose a month...</option>
+                        ${Object.keys(promptsByMonth).map(m => `<option value="${m}">${m}</option>`).join('')}
+                    </select>
+                </div>
+                <button onclick="showRandomPrompt()" class="btn btn-gold w-full sm:w-auto mt-4 sm:mt-0">
+                    <i data-lucide="shuffle" class="w-4 h-4 inline mr-2"></i>Random Prompt
+                </button>
+            </div>
+            <div id="randomPromptDisplay" class="hidden mt-4 p-4 bg-gradient-to-r from-[rgba(212,175,55,0.1)] to-transparent border-l-4 border-[var(--gold)] rounded">
+                <p class="text-lg serif-italic indigo" id="randomPromptText"></p>
+                <button onclick="copyPrompt(document.getElementById('randomPromptText').textContent)" class="copy-btn mt-2">
+                    <i data-lucide="copy" class="w-3 h-3"></i> Copy
+                </button>
+            </div>
+        </div>
+        <div id="promptsContainer">
+            ${Object.keys(promptsByMonth).map(month => {
+                const prompts = promptsByMonth[month];
+                const promptHtml = prompts.map((p, idx) => `
+                    <div class="flex gap-3 items-start p-3 hover:bg-[var(--cream)] rounded transition">
+                        <span class="prompt-number">${idx + 1}</span>
+                        <p class="text-sm flex-1">${p}</p>
+                        <button onclick="copyPrompt('${p.replace(/'/g, "\\'")}')" class="copy-btn flex-shrink-0">
+                            <i data-lucide="copy" class="w-3 h-3"></i>
+                        </button>
+                    </div>`).join('');
+                return `
+                <div id="prompts-${month}" class="prompt-month-group" style="display: none;">
+                    <div class="premium-card p-8">
+                        <h3 class="text-2xl serif gold mb-6">${month}</h3>
+                        <div class="space-y-2">${promptHtml}</div>
+                    </div>
+                </div>`;
+            }).join('')}
+        </div>
+    </div>
+</div>
+`);
+</script>
+
+<!-- Pages 57-66: 30-Day Challenge - WITH TEXTAREA + MIC -->
+<script>
+const challenges = [
+    { day: 1, title: 'Release Certainty', exercise: 'Name one belief you treat as fact. Write its twin.', action: 'Tell one person "I don\'t know" today.', alt1: 'Write down 3 things you\'re certain about. Question one.', alt2: 'Notice when you say "always" or "never". Find an exception.' },
+    { day: 2, title: 'Challenge Assumptions', exercise: 'What "should" are you carrying? Write the opposite.', action: 'Break one small rule you made up.', alt1: 'List your "shoulds". Cross out one.', alt2: 'Ask: Whose voice is this should? Is it yours?' },
+    { day: 3, title: 'Rewrite a Memory', exercise: 'Pick a painful memory. Write it from your future wise self.', action: 'Touch your heart when the memory arises.', alt1: 'Write the memory from a compassionate witness perspective.', alt2: 'Ask: What did this memory teach me?' },
+    { day: 4, title: 'Find Three Alternative Truths', exercise: 'Take your most painful story. Find three truths that can coexist.', action: 'When caught in certainty, say "and".', alt1: 'Find one alternative truth. Then another.', alt2: 'Ask: What else could be true here?' },
+    { day: 5, title: 'Practice Curiosity Over Certainty', exercise: 'For every judgment today, replace it with a question.', action: 'End one sentence with "I wonder" instead of a period.', alt1: 'Notice one judgment. Replace with "I\'m curious about..."', alt2: 'Ask a question instead of making a statement.' },
+    { day: 6, title: 'The Gift of Not Knowing', exercise: 'List 5 things you don\'t know. Notice how it feels.', action: 'Breathe into uncertainty for 60 seconds.', alt1: 'List 3 mysteries in your life. Bless them.', alt2: 'Practice saying "I don\'t know" out loud.' },
+    { day: 7, title: 'Both/And Training', exercise: 'Write 3 statements using "both/and" instead of "either/or".', action: 'Replace one "but" with "and" in conversation.', alt1: 'Find one either/or in your thinking. Replace with both/and.', alt2: 'Notice when you use "but". Pause. Try "and".' },
+    { day: 8, title: 'The Maybe Practice', exercise: 'Add "maybe" to 3 declarations you hold as fact.', action: 'Say "maybe" before giving advice today.', alt1: 'Soften one certainty with "maybe".', alt2: 'Practice "maybe" in the mirror.' },
+    { day: 9, title: 'Identity Flexibility', exercise: 'Complete: "I am not only ___, I am also ___"', action: 'Introduce yourself differently than usual once.', alt1: 'List 5 identities you hold. Question one.', alt2: 'Ask: Who am I beyond my roles?' },
+    { day: 10, title: 'Time Collapse', exercise: 'What if there\'s no such thing as "behind"? Write from your future self.', action: 'Remove one deadline from your mental calendar.', alt1: 'Write: "I am on time for my life."', alt2: 'Ask: What if I\'m not late? What if I\'m early?' },
+    { day: 11, title: 'The Opposite Game', exercise: 'Take a belief and argue the opposite for 5 minutes.', action: 'Play devil\'s advocate with yourself once today.', alt1: 'Write the opposite of one certainty.', alt2: 'Debate yourself for 2 minutes.' },
+    { day: 12, title: 'Evidence Gathering', exercise: 'Find evidence that contradicts your most painful story.', action: 'Notice one thing that disproves your story today.', alt1: 'List 3 facts that challenge your narrative.', alt2: 'Ask: What evidence supports the opposite?' },
+    { day: 13, title: 'Future Self Letter', exercise: 'Write a letter from your 80-year-old self. What do they want you to know?', action: 'Make one decision your future self would thank you for.', alt1: 'Write 3 sentences from your future self.', alt2: 'Ask: What would 80-year-old me say about this?' },
+    { day: 14, title: 'The Story Behind the Story', exercise: 'What story are you telling about why you tell this story?', action: 'Thank your story for trying to protect you.', alt1: 'Ask: Why do I need this story to be true?', alt2: 'Notice what the story gives you. What does it cost?' },
+    { day: 15, title: 'Compassionate Witness', exercise: 'Write about your pain in third person, as a compassionate friend.', action: 'Place a hand on your heart when suffering arises.', alt1: 'Speak to yourself like a beloved child.', alt2: 'Write: "Dear One, I see you..."' },
+    { day: 16, title: 'The Beginner\'s Mind', exercise: 'Approach one routine activity as if you\'ve never done it before.', action: 'Do one thing with your non-dominant hand.', alt1: 'Notice 5 new things in a familiar place.', alt2: 'Ask: What if I didn\'t know how to do this?' },
+    { day: 17, title: 'Emotional Alchemy', exercise: 'What is this emotion trying to tell you? What is its wisdom?', action: 'Name one emotion without judging it today.', alt1: 'Breathe into one feeling. Ask what it wants.', alt2: 'Complete: "My anger/sadness is telling me..."' },
+    { day: 18, title: 'The Pause Practice', exercise: 'Between stimulus and response, extend the space.', action: 'Take 3 breaths before responding to anything today.', alt1: 'Count to 5 before answering.', alt2: 'Notice the space between thoughts.' },
+    { day: 19, title: 'Sacred Questions', exercise: 'What question, if you lived it, would change everything?', action: 'Ask your sacred question before sleep tonight.', alt1: 'Write one question you\'re afraid to ask.', alt2: 'Ask: What question am I avoiding?' },
+    { day: 20, title: 'The Neutral Zone', exercise: 'Practice describing events without story. Just facts.', action: 'Narrate one experience today in pure facts.', alt1: 'Strip one event to facts only.', alt2: 'Ask: What actually happened? No story.' },
+    { day: 21, title: 'The Reverse Golden Rule', exercise: 'Treat yourself the way you treat someone you love.', action: 'Speak to yourself as you would a beloved friend once.', alt1: 'Write yourself a love note.', alt2: 'Ask: Would I say this to someone I love?' },
+    { day: 22, title: 'The Gift in the Wound', exercise: 'What gift did your deepest wound give you?', action: 'Thank your wound for its teaching today.', alt1: 'List 3 ways your pain shaped your wisdom.', alt2: 'Ask: What did this break open in me?' },
+    { day: 23, title: 'Unlearning', exercise: 'What are you ready to unlearn?', action: 'Catch yourself in the old pattern once today.', alt1: 'Name one belief you\'re outgrowing.', alt2: 'Write: "I used to believe... Now I see..."' },
+    { day: 24, title: 'The Space Between', exercise: 'Who are you in the space between who you were and who you\'re becoming?', action: 'Dwell in the in-between for 2 minutes today.', alt1: 'Write from the threshold. What\'s true here?', alt2: 'Ask: Who am I between identities?' },
+    { day: 25, title: 'The Myth of Arrival', exercise: 'What if there\'s nowhere to arrive? What if this is it?', action: 'Fully arrive in one moment today.', alt1: 'Write: "This moment is the destination."', alt2: 'Ask: What if I\'ve already arrived?' },
+    { day: 26, title: 'The Enough Practice', exercise: 'List 10 ways you are already enough.', action: 'Say "I am enough" to your reflection.', alt1: 'Write: "I am enough because..." 5 times.', alt2: 'Ask: What if enough is my nature, not my achievement?' },
+    { day: 27, title: 'The Surrender', exercise: 'What are you ready to surrender control of?', action: 'Open your hands, palms up, for 30 seconds.', alt1: 'List what you can\'t control. Release one.', alt2: 'Write: "I surrender..." and breathe.' },
+    { day: 28, title: 'The Integration', exercise: 'What story are you ready to retire? What new story to live?', action: 'Burn or delete one old story today.', alt1: 'Name the story you\'re done with.', alt2: 'Write your new narrative in one sentence.' },
+    { day: 29, title: 'The Witness', exercise: 'Write about yourself in third person with radical compassion.', action: 'Witness yourself with love once today.', alt1: 'Write: "She/He/They are..." with kindness.', alt2: 'Describe yourself like a beloved character.' },
+    { day: 30, title: 'Faith in Nothing', exercise: 'What if you don\'t need to know? What if not-knowing is faith?', action: 'Live one hour today without needing to know.', alt1: 'Write: "I don\'t need to know because..."', alt2: 'Practice not-knowing for 10 minutes.' }
+];
+
+for (let i = 0; i < 10; i++) {
+    const pageNum = 57 + i;
+    const daySet = challenges.slice(i*3, i*3+3);
+    
+    const dayCards = daySet.map(d => `
+        <div class="premium-card p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-lg gold-foil text-white flex items-center justify-center text-xl font-bold serif">${d.day}</div>
+                <h3 class="text-2xl font-bold indigo">${d.title}</h3>
+            </div>
+            <p class="text-gray-700 mb-4">Exercise: ${d.exercise}</p>
+            <div class="journal-group">
+                <div class="textarea-container">
+                    <textarea id="challenge-${d.day}-response" class="journal-textarea speech-target" data-label="Challenge ${d.day}" placeholder="Reflect on the exercise..."></textarea>
+                    <button class="mic-btn no-print" data-target="challenge-${d.day}-response" aria-label="Voice input">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="angle-dropdown mt-4">
+                <label>Alternative practice</label>
+                <select onchange="showAltPractice(this, ${d.day})">
+                    <option value="">If this doesn't resonate, try...</option>
+                    <option value="${d.alt1}">${d.alt1}</option>
+                    <option value="${d.alt2}">${d.alt2}</option>
+                </select>
+                <div id="alt-practice-${d.day}" class="selected-prompt" style="display:none;"></div>
+            </div>
+            <div class="mt-4 p-4 bg-[var(--cream-dark)] rounded-lg">
+                <p class="text-xs text-gray-600 uppercase tracking-wider mb-1">Micro-action:</p>
+                <p class="text-sm indigo font-semibold">${d.action}</p>
+            </div>
+        </div>`).join('');
+    
+    const header = pageNum === 57 ? `
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">Faith in Nothing: 30-Day Challenge</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic">Release certainty. Find freedom.</p>
+        </div>` : '';
+    
+    document.write(`
+<div class="page" data-page="${pageNum}">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        ${header}
+        <div class="space-y-8">${dayCards}</div>
+    </div>
+</div>
+`);
+}
+</script>
+
+<!-- Pages 67-71: Twin Story Cards - 20 cards, 4 per page -->
+<script>
+const cards = [
+    { front: 'I am stuck.', back: 'What if I am becoming?' },
+    { front: 'I\'m too late.', back: 'What if I\'m on time for my life?' },
+    { front: 'I failed.', back: 'What if I learned?' },
+    { front: 'I\'m not enough.', back: 'What if I am enough, and growing?' },
+    { front: 'Nobody understands me.', back: 'What if I\'m meant to understand myself first?' },
+    { front: 'I ruined everything.', back: 'What if I cleared space for what\'s next?' },
+    { front: 'I\'m behind.', back: 'What if my timing is protecting me?' },
+    { front: 'I\'m too old to start.', back: 'What if experience is my advantage?' },
+    { front: 'I\'m alone.', back: 'What if I am in solitude with myself?' },
+    { front: 'I\'m not talented enough.', back: 'What if consistency beats talent?' },
+    { front: 'I don\'t know who I am.', back: 'What if I\'m meeting myself for the first time?' },
+    { front: 'I have to do it perfect.', back: 'What if done is better than perfect?' },
+    { front: 'I\'m broken.', back: 'What if I\'m breaking open?' },
+    { front: 'I\'ll never be happy.', back: 'What if grief is love with nowhere to go?' },
+    { front: 'I can\'t trust anyone.', back: 'What if I can trust myself to handle betrayal?' },
+    { front: 'I\'m a fraud.', back: 'What if I\'m learning in public?' },
+    { front: 'I need to control this.', back: 'What if I can control only my response?' },
+    { front: 'I\'m not worthy.', back: 'What if I was born worthy?' },
+    { front: 'This is the end.', back: 'What if this is the beginning?' },
+    { front: 'I don\'t know.', back: 'What if not knowing is faith?' }
+];
+
+for (let i = 0; i < 5; i++) {
+    const pageNum = 67 + i;
+    const cardSet = cards.slice(i*4, i*4+4);
+    const isFirst = i === 0;
+    
+    const header = isFirst ? `
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">Twin Story Cards</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic">Printable pull-cards for emergency use</p>
+        </div>` : '';
+    
+    const cardHtml = cardSet.map((c, idx) => `
+        <div class="twin-card">
+            <div class="relative z-10">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-4">Card ${(i*4) + idx + 1} - Front</p>
+                <p class="text-2xl serif indigo mb-6">${c.front}</p>
+                <div class="h-px w-16 gold-bg mx-auto my-6"></div>
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Back</p>
+                <p class="text-lg serif-italic text-gray-700">${c.back}</p>
+            </div>
+        </div>`).join('');
+    
+    const footer = pageNum === 71 ? `
+        <div class="mt-12 text-center premium-card p-6">
+            <p class="text-sm text-gray-600 serif-italic">
+                <i data-lucide="scissors" class="w-4 h-4 inline mr-2 gold"></i>
+                Cut out these cards. Pull one when you're stuck in Story #1.
+            </p>
+        </div>` : '';
+    
+    document.write(`
+<div class="page" data-page="${pageNum}">
+    <div class="max-w-6xl mx-auto pt-24 sm:pt-28">
+        ${header}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">${cardHtml}</div>
+        ${footer}
+    </div>
+</div>
+`);
+}
+</script>
+
+<!-- Pages 72-81: Reflection Trackers - WITH TEXTAREA + MIC -->
+<script>
+for (let i = 1; i <= 10; i++) {
+    const pageNum = 71 + i;
+    const isFirst = pageNum === 72;
+    const header = isFirst ? `
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">Reflection Tracker #${i}</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic">Track your certainty shifts</p>
+        </div>` : `
+        <div class="text-center mb-8">
+            <h2 class="text-3xl serif gold">Reflection Tracker #${i}</h2>
+        </div>`;
+    
+    let rows = '';
+    for (let r = 0; r < 4; r++) {
+        rows += '<tr>';
+        for (let c = 0; c < 5; c++) {
+            const id = `tracker-${i}-${r}-${c}`;
+            rows += `<td><div class="tracker-textarea-container">
+                <textarea id="${id}" class="tracker-textarea speech-target" data-label="Tracker ${i} R${r+1}C${c+1}"></textarea>
+                <button class="tracker-mic no-print" data-target="${id}" aria-label="Voice input">
+                    <i data-lucide="mic" class="w-3 h-3"></i>
+                </button>
+            </div></td>`;
+        }
+        rows += '</tr>';
+    }
+    
+    document.write(`
+<div class="page" data-page="${pageNum}">
+    <div class="max-w-6xl mx-auto pt-24 sm:pt-28">
+        ${header}
+        <div class="premium-card p-6 overflow-x-auto">
+            <table class="tracker-table">
+                <thead><tr><th>Original Story</th><th>Twin Story</th><th>New Perspective</th><th>Action Taken</th><th>Result</th></tr></thead>
+                <tbody>${rows}</tbody>
+            </table>
+        </div>
+    </div>
+</div>
+`);
+}
+</script>
+
+<!-- Page 82: About the Author -->
+<div class="page" data-page="82">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl sm:text-5xl mb-3">About the Author</h2>
+            <div class="ornament"></div>
+            <p class="text-gray-600 serif-italic text-lg">The story behind the method</p>
+        </div>
+        
+        <div class="premium-card p-8">
+            <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>
+                    The Twin Story Method was born from a simple observation: every moment holds at least two truths. What looks like failure from one angle becomes information from another.
+                </p>
+                <p>
+                    This practice emerged from years of watching people transform the moment they questioned the story they were most certain about. The method isn't about positive thinking — it's about precision thinking. When we see the twin of our dominant narrative, we get our choice back.
+                </p>
+                <p>
+                    This workbook is not theory. It's practice. It's the exact process used to move from certainty to curiosity, from suffering to choice, from fear to faith — not faith in outcomes, but faith in our ability to meet whatever comes.
+                </p>
+                <p class="serif-italic text-xl gold-gradient font-bold text-center pt-6">
+                    Every story has a twin. Which one will you choose to live?
+                </p>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-[var(--border)]">
+                <label class="block text-sm font-semibold text-gray-700 mb-4 uppercase tracking-wider">Your Story Here:</label>
+                <div class="textarea-container">
+                    <textarea id="author-story" class="journal-textarea speech-target" data-label="Your Story" placeholder="What is your story?"></textarea>
+                    <button class="mic-btn no-print" data-target="author-story" aria-label="Voice input">
+                        <i data-lucide="mic" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page 83: Continue Your Practice -->
+<div class="page" data-page="83">
+    <div class="max-w-4xl mx-auto pt-24 sm:pt-28 min-h-screen flex flex-col justify-center">
+        <div class="text-center">
+            <h2 class="text-5xl sm:text-6xl mb-3">Continue Your Practice</h2>
+            <div class="ornament"></div>
+            <div class="max-w-2xl mx-auto mt-12">
+                <div class="premium-card p-12">
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        The Twin Story Method lives in daily use.
+                    </p>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8">
+                        Return to these pages when certainty hardens.
+                    </p>
+                    <p class="text-xl gold-gradient font-bold serif-italic">
+                        Your practice is the product.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-16">
+                <p class="text-xs text-gray-400">© 2024 The Twin Story Method™ | All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Page Nav -->
+<div class="no-print fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 sm:hidden">
+    <div class="bg-white/98 backdrop-blur-lg border-2 border-[var(--border)] rounded-full px-5 py-3 shadow-xl flex items-center gap-3">
+        <button onclick="prevPage()" class="p-2 hover:bg-[var(--cream-dark)] rounded-full transition">
+            <svg class="w-5 h-5 indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <span class="text-sm font-bold px-2 indigo"><span id="pageNumMobile">1</span> / 83</span>
+        <button onclick="nextPage()" class="p-2 hover:bg-[var(--cream-dark)] rounded-full transition">
+            <svg class="w-5 h-5 indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+</div>
+
+<script>
+    lucide.createIcons();
+    
+    let currentPage = 1;
+    const totalPages = 83;
+    let recognition = null;
+    let isRecording = false;
+    let currentRecordingBtn = null;
+    
+    function initSpeechRecognition() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) return false;
+        
+        recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+        
+        recognition.onstart = () => {
+            isRecording = true;
+            if (currentRecordingBtn) {
+                currentRecordingBtn.classList.add('recording');
+                currentRecordingBtn.innerHTML = '<i data-lucide="mic-off" class="w-5 h-5"></i>';
+                lucide.createIcons();
+            }
+            showAlert('Listening... Speak now');
+        };
+        
+        recognition.onresult = (event) => {
+            const targetId = currentRecordingBtn?.dataset.target;
+            if (!targetId) return;
+            
+            const textarea = document.getElementById(targetId);
+            if (!textarea) return;
+            
+            let finalTranscript = '';
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                const transcript = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    finalTranscript += transcript + ' ';
+                }
+            }
+            
+            if (finalTranscript) {
+                textarea.value += (textarea.value ? ' ' : '') + finalTranscript.trim();
+                textarea.dispatchEvent(new Event('input'));
+            }
+        };
+        
+        recognition.onerror = (event) => {
+            console.error('Speech recognition error:', event.error);
+            stopRecording();
+            if (event.error === 'not-allowed') {
+                showAlert('Microphone permission denied. Please enable in browser settings.', 3000);
+            } else if (event.error === 'no-speech') {
+                showAlert('No speech detected. Please try again.', 2000);
+            } else {
+                showAlert('Voice input error. Please type instead.', 2000);
+            }
+        };
+        
+        recognition.onend = () => {
+            stopRecording();
+        };
+        
+        return true;
+    }
+    
+    function stopRecording() {
+        isRecording = false;
+        if (currentRecordingBtn) {
+            currentRecordingBtn.classList.remove('recording');
+            currentRecordingBtn.innerHTML = '<i data-lucide="mic" class="w-5 h-5"></i>';
+            lucide.createIcons();
+            currentRecordingBtn = null;
+        }
+        hideAlert();
+    }
+    
+    function showAlert(text, duration = 0) {
+        const alert = document.getElementById('speechAlert');
+        const alertText = document.getElementById('alertText');
+        alertText.textContent = text;
+        alert.style.display = 'block';
+        if (duration > 0) {
+            setTimeout(hideAlert, duration);
+        }
+    }
+    
+    function hideAlert() {
+        const alert = document.getElementById('speechAlert');
+        alert.style.display = 'none';
+    }
+    
+    function toggleRecording(btn) {
+        if (!recognition && !initSpeechRecognition()) {
+            showAlert('Voice input not supported. Please type.', 3000);
+            return;
+        }
+        
+        if (isRecording && currentRecordingBtn === btn) {
+            recognition.stop();
+        } else {
+            if (isRecording) {
+                recognition.stop();
+                setTimeout(() => startNewRecording(btn), 100);
+            } else {
+                startNewRecording(btn);
+            }
+        }
+    }
+    
+    function startNewRecording(btn) {
+        currentRecordingBtn = btn;
+        const targetId = btn.dataset.target;
+        const textarea = document.getElementById(targetId);
+        if (textarea) textarea.focus();
+        try {
+            recognition.start();
+        } catch (e) {
+            console.error('Recognition start failed:', e);
+            showAlert('Voice input failed. Please type.', 2000);
+        }
+    }
+    
+    document.addEventListener('click', (e) => {
+        const micBtn = e.target.closest('.mic-btn, .tracker-mic');
+        if (micBtn) {
+            e.preventDefault();
+            toggleRecording(micBtn);
+        }
+    });
+    
+    function updatePage() {
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        const targetPage = document.querySelector(`[data-page="${currentPage}"]`);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        }
+        document.getElementById('pageNum').textContent = currentPage;
+        document.getElementById('pageNumMobile').textContent = currentPage;
+        document.getElementById('totalPages').textContent = totalPages;
+        document.getElementById('progressFill').style.width = `${(currentPage / totalPages) * 100}%`;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        autoSave();
+        lucide.createIcons();
+    }
+    
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePage();
+        }
+    }
+    
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            updatePage();
+        }
+    }
+    
+    function goToPage(num) {
+        if (num >= 1 && num <= totalPages) {
+            currentPage = num;
+            updatePage();
+        }
+    }
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' && !e.target.matches('textarea, input')) nextPage();
+        if (e.key === 'ArrowLeft' && !e.target.matches('textarea, input')) prevPage();
+    });
+    
+    function autoSave() {
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach((input) => {
+            const key = input.id || `twinstory_v11_${currentPage}_${Array.from(inputs).indexOf(input)}`;
+            const saved = localStorage.getItem(key);
+            if (saved && !input.value && input.type !== 'select-one') input.value = saved;
+            
+            input.addEventListener('input', () => {
+                localStorage.setItem(key, input.value);
+            });
+            input.addEventListener('change', () => {
+                localStorage.setItem(key, input.value);
+            });
+        });
+    }
+    
+    function showSelectedPrompt(selectEl, pageNum) {
+        const display = document.getElementById(`selected-prompt-${pageNum}`);
+        if (selectEl.value) {
+            display.textContent = selectEl.value;
+            display.style.display = 'block';
+        } else {
+            display.style.display = 'none';
+        }
+    }
+    
+    function updatePrompts(month) {
+        const allGroups = document.querySelectorAll('.prompt-month-group');
+        allGroups.forEach(g => g.style.display = 'none');
+        if (month) {
+            const target = document.getElementById(`prompts-${month}`);
+            if (target) target.style.display = 'block';
+        }
+    }
+    
+    function showRandomPrompt() {
+        const display = document.getElementById('randomPromptDisplay');
+        const text = document.getElementById('randomPromptText');
+        const randomIndex = Math.floor(Math.random() * allPrompts.length);
+        text.textContent = allPrompts[randomIndex];
+        display.classList.remove('hidden');
+        lucide.createIcons();
+    }
+    
+    function copyPrompt(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = event.target.closest('.copy-btn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i data-lucide="check" class="w-3 h-3"></i> Copied!';
+            lucide.createIcons();
+            setTimeout(() => {
+                btn.innerHTML = original;
+                lucide.createIcons();
+            }, 2000);
+        });
+    }
+    
+    function showAltPractice(selectEl, dayNum) {
+        const display = document.getElementById(`alt-practice-${dayNum}`);
+        if (selectEl.value) {
+            display.textContent = selectEl.value;
+            display.style.display = 'block';
+        } else {
+            display.style.display = 'none';
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        initSpeechRecognition();
+        updatePage();
+    });
+</script>
+
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
