@@ -1,3 +1,4 @@
+import {AtlasPages} from "./atlas-pages"
 import { useState } from "react";
 
 export default function App(){
@@ -16,7 +17,7 @@ export default function App(){
             { 
       id: "atlas", 
       domain: "atlas.mimiscozycorner.com", 
-      url: "#resources", 
+      url: "#atlas", 
       title: "Atlas OS - Resources", 
       subtitle: "Budget + Housing Resources", 
       desc: "Budget Buster + Section 8 Housing - Guides, Resources, Voucher Help - No designs, just help!",
@@ -98,28 +99,7 @@ export default function App(){
       </div>
 
       {/* Bottom Shop Banner - All links to shop */}
-<div id="resources" style={{width:"100%", marginTop:"60px", padding:"30px", background:"#1a1a1a", borderRadius:"16px"}}>
-  <h2 style={{color:"#00ffff", textAlign:"center", fontSize:"28px"}}>Atlas OS - Resources</h2>
-  <p style={{color:"#fff", textAlign:"center", marginBottom:"30px"}}>No designs - Just help! Budget + Housing Guides</p>
-  
-  <div id="budget-buster" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #ff00ff"}}>
-    <h3 style={{color:"#ff00ff"}}>💰 Budget Buster</h3>
-    <p style={{color:"#fff"}}>Big Savings • Smart Finds • Happy Wallets! Save Money Finds, Budget Tips, Money-Saving Guides, How to Save $$$</p>
-    <p style={{color:"#aaa", fontSize:"14px"}}>Product in Atlas OS - Branched from Atlas OS</p>
-  </div>
-  
-  <div id="housing-resources" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #00ffff"}}>
-    <h3 style={{color:"#00ffff"}}>🏠 Section 8 Housing</h3>
-    <p style={{color:"#fff"}}>Helping Families Find a Place to Call Home - Housing Choice Voucher Guides, Application Help, Scripts</p>
-    <p style={{color:"#aaa", fontSize:"14px"}}>Product in Atlas OS</p>
-  </div>
-  
-  <div id="creative-ads" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #ff1493"}}>
-    <h3 style={{color:"#ff1493"}}>🎨 Creative Ads</h3>
-    <p style={{color:"#fff"}}>Ad Templates, Creative Designs, Marketing Resources - For Your Business</p>
-    <p style={{color:"#aaa", fontSize:"14px"}}>Product in Atlas OS</p>
-  </div>
-</div>
+<AtlasPages />
 
 <div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
   <img 
@@ -130,7 +110,7 @@ export default function App(){
 </div>
 
 <div style={{display:"flex", justifyContent:"center", gap:"15px", padding:"20px", background:"#0a0a0f"}}>
-  <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=budget")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Budget Busters</button>
+  <button onClick={()=>window.open("#atlas-budget")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Budget Busters</button>
   <button onClick={()=>window.open("https://shop.mimiscozycorner.com")} style={{background:"#00ffff", color:"black", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Mimi's Shop</button>
   <button onClick={()=>window.open("https://shop.mimiscozycorner.com")} style={{background:"#ff1493", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>All Products →</button>
 </div>
