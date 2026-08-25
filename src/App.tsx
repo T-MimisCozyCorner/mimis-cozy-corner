@@ -36,13 +36,13 @@ return(
 <div style={{minHeight:"100vh",background:"#faf8f3"}}>
 <div style={{position:"fixed",top:0,left:0,right:0,zIndex:50,background:"#fff",borderBottom:"1px solid #e2dccc"}}>
 <div style={{maxWidth:1280,margin:"0 auto",padding:"12px 16px",display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-<div><div style={{fontSize:11,color:"#666"}}>{p.title}</div><div style={{fontWeight:700,fontSize:13}}>{title}</div><div style={{fontSize:10,color:"#999"}}>Page {safePg} of {total} - NOT blank! pg={pg} safe={safePg}</div></div>
+<div><div style={{fontSize:11,color:"#666"}}>{p.title}</div><div style={{fontWeight:700,fontSize:13}}>{title}</div><div style={{fontSize:10,color:"#999"}}>Page {safePg} of {total} Page {safePg} of {total}</div></div>
 <div style={{display:"flex",gap:8,alignItems:"center"}}><button onClick={()=>setPg(Math.max(1,safePg-1))} disabled={safePg===1} style={{padding:"8px 12px",borderRadius:8}}>Prev</button><span>{safePg}/{total}</span><button onClick={()=>setPg(Math.min(total,safePg+1))} disabled={safePg===total} style={{padding:"8px 12px",borderRadius:8,background:"#1a1a2e",color:"#fff"}}>Next</button></div>
 </div><div style={{height:6,background:"#eee"}}><div style={{height:"100%",width:`${prog}%`,background:"#d4af37"}}></div></div>
 </div>
 <div style={{paddingTop:120,paddingBottom:100,maxWidth:900,margin:"0 auto",paddingLeft:16,paddingRight:16}}>
 <div style={{background:"#fff",borderRadius:16,padding:24,border:"1px solid #e2dccc"}}>
-<h2>{p.icon} {title}</h2><p style={{color:p.color,fontWeight:700}}>Page {safePg} of {total} - CONTENT EXISTS - NOT BLANK</p>
+<h2>{p.icon} {title}</h2><p style={{color:p.color,fontWeight:700}}>Page {safePg} of {total}</p>
 {lines.map((ln,i)=><div key={i} style={{marginTop:12,padding:ln.includes("WRITE")?12:0,background:ln.includes("WRITE")?"#f0ede5":"transparent",borderRadius:8}}><p style={{margin:0}}>{ln}</p>{ln.includes("WRITE")&&<textarea placeholder={`Write for page ${safePg} NOT blank`} style={{width:"100%",marginTop:8,minHeight:60,border:"1px solid #d4af37",borderRadius:6,padding:8}}></textarea>}</div>)}
 <div style={{marginTop:24,padding:16,background:"#1a1a2e",borderRadius:12,color:"#fff"}}><h3 style={{color:"#d4af37",marginTop:0}}>PDFs Inside - Page {safePg}/{total}</h3>{p.pdfs.map((pdf:string)=><p key={pdf}><a href={`/pdfs/${pdf}`} target="_blank" style={{color:"#d4af37"}}>{pdf} Open</a></p>)}<button onClick={onBack} style={{marginTop:12,background:"#d4af37",padding:"10px 20px",borderRadius:8,border:"none",fontWeight:700}}>Back</button></div>
 </div></div>
