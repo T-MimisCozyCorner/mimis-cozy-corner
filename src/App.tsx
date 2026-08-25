@@ -13,29 +13,7 @@ export default function App(){
       image: "/images/branch-shop.png",
       badge: "SHOP ONLY" 
     },
-    { 
-      id: "budget", 
-      domain: "budget.mimiscozycorner.com", 
-      url: "#budget-buster", 
-      title: "Budget Buster", 
-      subtitle: "Big Savings • Smart Finds • Happy Wallets!", 
-      desc: "Save Money Finds - Dollar deals, coupon queen, broke but cozy",
-      color: "#0f5ca8",
-      image: "/images/branch-budget.png",
-      badge: "SAVE MONEY" 
-    },
-    { 
-      id: "housing", 
-      domain: "housing.mimiscozycorner.com", 
-      url: "#housing-resources", 
-      title: "Section 8 Housing", 
-      subtitle: "Helping Families Find a Place to Call Home", 
-      desc: "Housing Choice Voucher - Guidance Resources Support Hope - 6 Properties",
-      color: "#0f5ca8",
-      image: "/images/branch-housing.png",
-      badge: "VOUCHER APPROVED" 
-    },
-    { 
+            { 
       id: "atlas", 
       domain: "atlas.mimiscozycorner.com", 
       url: "#resources", 
@@ -127,13 +105,19 @@ export default function App(){
   <div id="budget-buster" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #ff00ff"}}>
     <h3 style={{color:"#ff00ff"}}>💰 Budget Buster</h3>
     <p style={{color:"#fff"}}>Big Savings • Smart Finds • Happy Wallets! Save Money Finds, Budget Tips, Money-Saving Guides, How to Save $$$</p>
-    <p style={{color:"#aaa", fontSize:"14px"}}>Product on Main - Not in Shop</p>
+    <p style={{color:"#aaa", fontSize:"14px"}}>Product in Atlas OS - Branched from Atlas OS</p>
   </div>
   
   <div id="housing-resources" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #00ffff"}}>
     <h3 style={{color:"#00ffff"}}>🏠 Section 8 Housing</h3>
     <p style={{color:"#fff"}}>Helping Families Find a Place to Call Home - Housing Choice Voucher Guides, Application Help, Scripts</p>
-    <p style={{color:"#aaa", fontSize:"14px"}}>Product on Main - Not in Shop</p>
+    <p style={{color:"#aaa", fontSize:"14px"}}>Product in Atlas OS</p>
+  </div>
+  
+  <div id="creative-ads" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #ff1493"}}>
+    <h3 style={{color:"#ff1493"}}>🎨 Creative Ads</h3>
+    <p style={{color:"#fff"}}>Ad Templates, Creative Designs, Marketing Resources - For Your Business</p>
+    <p style={{color:"#aaa", fontSize:"14px"}}>Product in Atlas OS</p>
   </div>
 </div>
 
