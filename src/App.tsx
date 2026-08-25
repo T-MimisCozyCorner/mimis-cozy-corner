@@ -60,7 +60,7 @@ export default function App(){
     { 
       id: "live-magenta", 
       domain: "mimiscozycorner.com", 
-      url: "https://mimiscozycorner.com", 
+      url: "https://shop.mimiscozycorner.com", 
       title: "Main Hub", 
       subtitle: "Custom Designs for Cozy Mamas - Magenta Edition", 
       desc: "Main Website - One Website, Separated Brands - Let's Make Something Cozy!",
@@ -121,29 +121,13 @@ export default function App(){
 
       
       {/* Social Links - All Connected */}
+      
+      {/* Shop Buttons - All go to shop.mimiscozycorner.com */}
       <div style={{display:"flex", justifyContent:"center", gap:"15px", padding:"20px", background:"#0a0a0f", flexWrap:"wrap"}}>
-        <a href="https://www.facebook.com/share/19bE8F6Vo8/?mibextid=wwXIfr" target="_blank" style={{color:"#ff00ff", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>📘 Facebook</a>
-        <a href="https://www.instagram.com/mimis_corner_co?igsh=MXczaGt4dW55M2Z1ag==" target="_blank" style={{color:"#ff00ff", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>📸 Instagram @mimis_corner_co</a>
-        <a href="https://www.tiktok.com/@mimis_cozy_corner" target="_blank" style={{color:"#00ffff", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>🎵 TikTok @mimis_cozy_corner</a>
-        <a href="https://www.threads.com/@helppeople2plan" target="_blank" style={{color:"white", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>🧵 Threads @helppeople2plan</a>
-        <a href="https://pin.it/1CsxMmUad" target="_blank" style={{color:"#ff1493", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>📌 Pinterest</a>
-        <a href="https://v.lemon8-app.com/s/OgjcZeTveY" target="_blank" style={{color:"#ffff00", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>🍋 Lemon8</a>
+        <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=budget","_blank")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold", cursor:"pointer"}}>Budget Busters</button>
+        <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=shop","_blank")} style={{background:"#00ffff", color:"black", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold", cursor:"pointer"}}>Mimi's Shop</button>
+        <button onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")} style={{background:"#ff1493", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold", cursor:"pointer"}}>All Products →</button>
       </div>
 
-      {/* Bottom Shop Banner - All links to shop */}
-<div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
-  <img 
-    src="/images/mimi-banner-magenta.png" 
-    alt="Shop Mimi's Cozy Corner" 
-    style={{width:"100%", height:"auto", display:"block"}}
-  />
-</div>
-
-<div style={{display:"flex", justifyContent:"center", gap:"15px", padding:"20px", background:"#0a0a0f"}}>
-  <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=budget")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Budget Busters</button>
-  <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=shop")} style={{background:"#00ffff", color:"black", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Mimi's Shop</button>
-  <button onClick={()=>window.open("https://shop.mimiscozycorner.com")} style={{background:"#ff1493", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>All Products →</button>
-</div>
-    </div>
   );
 }
