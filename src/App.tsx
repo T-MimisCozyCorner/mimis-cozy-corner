@@ -122,7 +122,7 @@ export default function App(){
       Bottom Shop Banner - All links to shop */}
 <div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
   <img 
-    src="/images/bottom-banner.png" 
+    src="/images/mimi-banner-magenta.png" 
     alt="Shop Mimi's Cozy Corner" 
     style={{width:"100%", height:"auto", display:"block"}}
   />
