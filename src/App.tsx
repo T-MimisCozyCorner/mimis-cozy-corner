@@ -119,6 +119,17 @@ export default function App(){
         </div>
       </div>
 
+      
+      {/* Social Links - All Connected */}
+      <div style={{display:"flex", justifyContent:"center", gap:"15px", padding:"20px", background:"#0a0a0f", flexWrap:"wrap"}}>
+        <a href="https://www.facebook.com/share/19bE8F6Vo8/?mibextid=wwXIfr" target="_blank" style={{color:"#ff00ff", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>📘 Facebook</a>
+        <a href="https://www.instagram.com/mimis_corner_co?igsh=MXczaGt4dW55M2Z1ag==" target="_blank" style={{color:"#ff00ff", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>📸 Instagram @mimis_corner_co</a>
+        <a href="https://www.tiktok.com/@mimis_cozy_corner" target="_blank" style={{color:"#00ffff", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>🎵 TikTok @mimis_cozy_corner</a>
+        <a href="https://www.threads.com/@helppeople2plan" target="_blank" style={{color:"white", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>🧵 Threads @helppeople2plan</a>
+        <a href="https://pin.it/1CsxMmUad" target="_blank" style={{color:"#ff1493", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>📌 Pinterest</a>
+        <a href="https://v.lemon8-app.com/s/OgjcZeTveY" target="_blank" style={{color:"#ffff00", fontWeight:"bold", textDecoration:"none", background:"#1a1a1a", padding:"10px 15px", borderRadius:"20px"}}>🍋 Lemon8</a>
+      </div>
+
       {/* Bottom Shop Banner - All links to shop */}
 <div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
   <img 
