@@ -38,10 +38,10 @@ export default function App(){
     { 
       id: "atlas", 
       domain: "atlas.mimiscozycorner.com", 
-      url: "https://shop.mimiscozycorner.com?brand=atlas", 
-      title: "Atlas OS", 
-      subtitle: "Manifesting + Sec 8 Guides", 
-      desc: "Spiritual, Divine, Healing in Progress - Sec 8 voucher guides, housing scripts, manifesting",
+      url: "#resources", 
+      title: "Atlas OS - Resources", 
+      subtitle: "Budget + Housing Resources", 
+      desc: "Budget Buster + Section 8 Housing - Guides, Resources, Voucher Help - No designs, just help!",
       color: "#6a00ff",
       image: "/images/branch-atlas.png",
       badge: "ATLAS OS" 
