@@ -15,8 +15,9 @@ export default function App(){
       badge: "SHOP ONLY" 
     },
             { 
-      id: "atlas", 
-      domain: "atlas.mimiscozycorner.com", 
+      id: "atlas",
+      title: "Atlas OS - Resources",
+      desc: "Budget + Housing Resources",
       url: "#atlas", 
       title: "Atlas OS - Resources", 
       subtitle: "Budget + Housing Resources", 
@@ -39,7 +40,7 @@ export default function App(){
     { 
       id: "live-magenta", 
       domain: "mimiscozycorner.com", 
-      url: "https://mimiscozycorner.com", 
+      url: "#atlas", 
       title: "Main Hub", 
       subtitle: "Custom Designs for Cozy Mamas - Magenta Edition", 
       desc: "Main Website - One Website, Separated Brands - Let's Make Something Cozy!",
