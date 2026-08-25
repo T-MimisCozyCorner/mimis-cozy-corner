@@ -26,8 +26,8 @@ export default function App(){
     },
     { 
       id: "housing", 
-      domain: "Rochester Content", 
-      url: "#housing", 
+      domain: "housing.mimiscozycorner.com", 
+      url: "https://housing.mimiscozycorner.com", 
       title: "Section 8 Housing", 
       subtitle: "Helping Families Find a Place to Call Home", 
       desc: "Housing Choice Voucher - Guidance Resources Support Hope - 6 Properties",
@@ -38,7 +38,7 @@ export default function App(){
     { 
       id: "atlas", 
       domain: "atlas.mimiscozycorner.com", 
-      url: "https://shop.mimiscozycorner.com?brand=atlas", 
+      url: "https://atlas.mimiscozycorner.com", 
       title: "Atlas OS", 
       subtitle: "Manifesting + Sec 8 Guides", 
       desc: "Spiritual, Divine, Healing in Progress - Sec 8 voucher guides, housing scripts, manifesting",
