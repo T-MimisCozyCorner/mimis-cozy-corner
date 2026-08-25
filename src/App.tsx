@@ -10,7 +10,7 @@ export default function App(){
       subtitle: "Mimi's Cozy Corner - Custom Designs", 
       desc: "Main Shop - 330 Designs - Budget Buster, Daily Finds, Creative Ads, Atlas OS",
       color: "#ff00ff",
-      image: "/images/final-branch-shop.png",
+      image: "/images/branch-shop.png",
       badge: "SHOP ONLY" 
     },
     { 
@@ -21,7 +21,7 @@ export default function App(){
       subtitle: "Big Savings • Smart Finds • Happy Wallets!", 
       desc: "Save Money Finds - Dollar deals, coupon queen, broke but cozy",
       color: "#0f5ca8",
-      image: "/images/final-branch-budget.png",
+      image: "/images/branch-budget.png",
       badge: "SAVE MONEY" 
     },
     { 
@@ -32,7 +32,7 @@ export default function App(){
       subtitle: "Helping Families Find a Place to Call Home", 
       desc: "Housing Choice Voucher - Guidance Resources Support Hope - 6 Properties",
       color: "#0f5ca8",
-      image: "/images/final-branch-housing.png",
+      image: "/images/branch-housing.png",
       badge: "VOUCHER APPROVED" 
     },
     { 
@@ -43,7 +43,7 @@ export default function App(){
       subtitle: "Manifesting + Sec 8 Guides", 
       desc: "Spiritual, Divine, Healing in Progress - Sec 8 voucher guides, housing scripts, manifesting",
       color: "#6a00ff",
-      image: "/images/final-branch-atlas.png",
+      image: "/images/branch-atlas.png",
       badge: "ATLAS OS" 
     },
     { 
@@ -54,7 +54,7 @@ export default function App(){
       subtitle: "Custom Designs for Cozy Mamas", 
       desc: "Live Pop-Up Store - Dream Design Create - 5 Products Live",
       color: "#ff00ff",
-      image: "/images/final-branch-live-white.png",
+      image: "/images/branch-live-white.png",
       badge: "LIVE POP-UP" 
     },
     { 
@@ -65,7 +65,7 @@ export default function App(){
       subtitle: "Custom Designs for Cozy Mamas - Magenta Edition", 
       desc: "Main Website - One Website, Separated Brands - Let's Make Something Cozy!",
       color: "#ff00ff",
-      image: "/images/final-branch-live-magenta.png",
+      image: "/images/branch-live-magenta.png",
       badge: "MAIN HUB" 
     },
   ];
