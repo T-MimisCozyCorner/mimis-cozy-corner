@@ -15,9 +15,8 @@ export default function App(){
       badge: "SHOP ONLY" 
     },
             { 
-      id: "atlas",
-      title: "Atlas OS - Resources",
-      desc: "Budget + Housing Resources",
+      id: "atlas", 
+      domain: "#atlas", 
       url: "#atlas", 
       title: "Atlas OS - Resources", 
       subtitle: "Budget + Housing Resources", 
