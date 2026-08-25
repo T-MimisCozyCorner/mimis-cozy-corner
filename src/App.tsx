@@ -118,6 +118,21 @@ export default function App(){
           ))}
         </div>
       </div>
+
+      Bottom Shop Banner - All links to shop */}
+<div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
+  <img 
+    src="/images/bottom-banner.png" 
+    alt="Shop Mimi's Cozy Corner" 
+    style={{width:"100%", height:"auto", display:"block"}}
+  />
+</div>
+
+<div style={{display:"flex", justifyContent:"center", gap:"15px", padding:"20px", background:"#0a0a0f"}}>
+  <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=budget")} style={{background:"#ff00ff", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Budget Busters</button>
+  <button onClick={()=>window.open("https://shop.mimiscozycorner.com?brand=shop")} style={{background:"#00ffff", color:"black", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>Mimi's Shop</button>
+  <button onClick={()=>window.open("https://shop.mimiscozycorner.com")} style={{background:"#ff1493", color:"white", padding:"12px 24px", borderRadius:"8px", border:"none", fontWeight:"bold"}}>All Products →</button>
+</div>
     </div>
   );
 }
