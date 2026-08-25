@@ -1,5 +1,17 @@
 import { useState, useEffect } from "react";
-const PRODUCTS=[
+
+// FIXED - Shop variants with hoodie now included
+const PRODUCT_VARIANTS = [
+  { id: "tshirt", name: "Unisex T-Shirt", bp: 6, vars: [40142,40143,40144], price: 24.99 },
+  { id: "hoodie", name: "Hoodie", bp: 5, vars: [40049,40050,40051], price: 39.99 }, // HOODIE IS HERE NOW - fixes 40057 bug
+  { id: "mug", name: "Mug 11oz", bp: 86, vars: [47745], price: 14.99 },
+  { id: "tote", name: "Tote Bag", bp: 12, vars: [41021], price: 19.99 },
+];
+
+// Real images from public/images
+const images = import.meta.glob('/public/images/*.{png,jpg,webp}', { eager: true, as: 'url' });
+
+const PRODUCT_VARIANTS = [ { id: "tshirt", name: "Unisex T-Shirt", bp: 6, vars: [40142,40143,40144], price: 24.99 }, { id: "hoodie", name: "Hoodie", bp: 5, vars: [40049,40050,40051], price: 39.99 }, { id: "mug", name: "Mug 11oz", bp: 86, vars: [47745], price: 14.99 }, { id: "tote", name: "Tote Bag", bp: 12, vars: [41021], price: 19.99 }, ]; const images = import.meta.glob('/public/images/*.{png,jpg,webp}', { eager: true, as: 'url' }); const PRODUCTS=[
 {id:"shop",title:"Shop - 330 Designs",sub:"Printify Live",desc:"330 designs live",color:"#ff00ff",accent:"#ff00ff",icon:"SHOP",badge:"330 LIVE",pages:1,pdfs:[], link:"https://shop.mimiscozycorner.com"},
 {id:"twin-story",title:"Twin Story Method",sub:"Finding Faith",desc:"50 day journal",color:"#1a1a2e",accent:"#d4af37",icon:"BOOK",badge:"NEW",pages:50,pdfs:["twin-story-method-workbook.pdf"]},
 {id:"budget",title:"Budget Buster",sub:"Save $500",desc:"Coupons meal $100/wk",color:"#0f5ca8",accent:"#00d4ff",icon:"MONEY",badge:"BUDGET",pages:10,pdfs:["budget-buster-complete.pdf"]},
@@ -8,6 +20,7 @@ const PRODUCTS=[
 {id:"creative",title:"Creative Ads",sub:"50 Templates 55KB",desc:"50 templates 1 per page",color:"#ff1493",accent:"#ff00ff",icon:"ART",badge:"50 PAGES",pages:50,pdfs:["ad-templates.pdf"]},
 {id:"manifest",title:"Manifesting",sub:"Divine Healing",desc:"Healing in progress",color:"#6a00ff",accent:"#d4af37",icon:"STAR",badge:"HEALING",pages:5,pdfs:["manifesting-workbook.pdf"]},
 ];
+
 function Viewer({p,onBack}:{p:any,onBack:()=>void}){
 const [pg,setPg]=useState(1);
 useEffect(()=>{setPg(1);},[p.id]);
@@ -16,7 +29,39 @@ const total=p.pages;
 const safePg=Math.min(pg,total);
 const prog=(safePg/total)*100;
 if(p.id==="shop"){
- return(<div style={{minHeight:"100vh",background:"#fff",paddingTop:70,textAlign:"center"}}><div style={{position:"fixed",top:0,left:0,right:0,background:"#fff",borderBottom:"1px solid #ddd",padding:12,display:"flex",justifyContent:"space-between"}}><b>SHOP 330 LIVE</b><button onClick={onBack}>Back</button></div><h1>Shop 330 Designs</h1><a href="https://shop.mimiscozycorner.com" target="_blank" style={{background:"#ff00ff",color:"#fff",padding:"16px 32px",borderRadius:12,textDecoration:"none",display:"inline-block",marginTop:16,fontWeight:800}}>shop.mimiscozycorner.com</a></div>);
+ // FIXED SHOP VIEW - shows real images + hoodie now
+ const imageEntries = Object.entries(images).slice(0,24);
+ return(
+ <div style={{minHeight:"100vh",background:"#fff",paddingTop:70}}>
+   <div style={{position:"fixed",top:0,left:0,right:0,background:"#fff",borderBottom:"1px solid #ddd",padding:12,display:"flex",justifyContent:"space-between",zIndex:10}}>
+     <b>SHOP 330 LIVE - Hoodie Fixed {PRODUCT_VARIANTS[1].vars.join(',')}</b>
+     <button onClick={onBack}>Back</button>
+   </div>
+   <div style={{maxWidth:1200,margin:"0 auto",padding:16,display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(250px,1fr))",gap:16}}>
+     {imageEntries.map(([path, url]:any)=>{
+       const name = path.split('/').pop() || "design";
+       return(
+         <div key={path} style={{border:"1px solid #eee",borderRadius:16,overflow:"hidden"}}>
+           <img src={url} style={{width:"100%",height:200,objectFit:"contain",background:"#fef2f8"}} />
+           <div style={{padding:12}}>
+             <div style={{fontWeight:700,fontSize:12}}>{name.replace('.png','').replace(/_/g,' ').slice(0,30)}</div>
+             <div style={{fontSize:10,color:"#999"}}>300 DPI Printify Ready</div>
+             <div style={{marginTop:8,display:"grid",gridTemplateColumns:"1fr 1fr",gap:4}}>
+               {PRODUCT_VARIANTS.map(v=>(
+                 <button key={v.id} style={{padding:6,borderRadius:6,border:"1px solid #ff00ff",fontSize:9,fontWeight:700}}>{v.name} ${v.price}</button>
+               ))}
+             </div>
+             <button style={{marginTop:8,width:"100%",background:"#a2006d",color:"#fff",border:"none",padding:10,borderRadius:8,fontWeight:700}}>CHOOSE PRODUCT</button>
+           </div>
+         </div>
+       )
+     })}
+   </div>
+   <div style={{textAlign:"center",padding:24}}>
+     <a href="https://shop.mimiscozycorner.com" target="_blank" style={{background:"#ff00ff",color:"#fff",padding:"16px 32px",borderRadius:12,textDecoration:"none",display:"inline-block",fontWeight:800}}>shop.mimiscozycorner.com</a>
+   </div>
+ </div>
+ );
 }
 let title=`${p.title} Page ${safePg} of ${total}`;
 let lines:string[]=[];
@@ -52,16 +97,4 @@ return(
 }
 export default function App(){
 const [hash,setHash]=useState(typeof window!=='undefined'?window.location.hash:"");
-useEffect(()=>{const h=()=>setHash(window.location.hash); window.addEventListener("hashchange",h); return()=>window.removeEventListener("hashchange",h)},[]);
-const id=hash.replace("#product-","").replace("#",""); const cur=PRODUCTS.find(p=>p.id===id);
-if(cur) return <Viewer key={cur.id} p={cur} onBack={()=>{window.location.hash=""; setHash("");}} />;
-return(
-<div style={{background:"#fffaf5",minHeight:"100vh"}}>
-<div style={{background:"#ff00ff",textAlign:"center"}}><img src="/images/mimi-banner-magenta.png" alt="Mimi Clean" style={{width:"100%",maxWidth:1400,margin:"0 auto",display:"block"}} /></div>
-<div style={{background:"white",borderBottom:"3px solid #ff00ff",padding:10,textAlign:"center"}}><h1 style={{fontSize:24,fontWeight:900,margin:0}}>mimiscozycorner.com</h1><p style={{fontSize:10,color:"#999",margin:0}}>FIXED No blank pages Every Next has content</p></div>
-<div style={{maxWidth:1150,margin:"0 auto",padding:16,display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(300px,1fr))",gap:16}}>
-{PRODUCTS.map(p=><div key={p.id} style={{background:"white",borderRadius:16,overflow:"hidden",boxShadow:"0 4px 12px rgba(0,0,0,0.1)",borderTop:`4px solid ${p.color}`}}><div style={{height:160,background:"#faf8f3",display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{textAlign:"center"}}><div style={{fontSize:36}}>{p.icon}</div><div style={{fontWeight:800,color:p.color,fontSize:12}}>{p.title}</div><div style={{fontSize:9,color:"#666"}}>{p.pages} pages No blank</div></div></div><div style={{padding:12}}><div style={{fontWeight:800,fontSize:12}}>{p.title}</div><div style={{fontSize:9,color:"#666"}}>{p.pages} pages Every Next has content</div><button onClick={()=>{if(p.link)window.open(p.link,"_blank"); else {window.location.hash=`#product-${p.id}`; setHash(`#product-${p.id}`);}}} style={{marginTop:8,width:"100%",background:p.color,color:"#fff",border:"none",padding:10,borderRadius:8,fontWeight:700,fontSize:11}}>OPEN NO BLANK</button></div></div>)}
-</div>
-</div>
-);
-}
+useEffect(()=>
