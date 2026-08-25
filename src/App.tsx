@@ -16,7 +16,7 @@ export default function App(){
     { 
       id: "budget", 
       domain: "budget.mimiscozycorner.com", 
-      url: "https://shop.mimiscozycorner.com?brand=budget", 
+      url: "#budget-buster", 
       title: "Budget Buster", 
       subtitle: "Big Savings • Smart Finds • Happy Wallets!", 
       desc: "Save Money Finds - Dollar deals, coupon queen, broke but cozy",
@@ -27,7 +27,7 @@ export default function App(){
     { 
       id: "housing", 
       domain: "housing.mimiscozycorner.com", 
-      url: "https://shop.mimiscozycorner.com#housing", 
+      url: "#housing-resources", 
       title: "Section 8 Housing", 
       subtitle: "Helping Families Find a Place to Call Home", 
       desc: "Housing Choice Voucher - Guidance Resources Support Hope - 6 Properties",
@@ -120,6 +120,23 @@ export default function App(){
       </div>
 
       {/* Bottom Shop Banner - All links to shop */}
+<div id="resources" style={{width:"100%", marginTop:"60px", padding:"30px", background:"#1a1a1a", borderRadius:"16px"}}>
+  <h2 style={{color:"#00ffff", textAlign:"center", fontSize:"28px"}}>Atlas OS - Resources</h2>
+  <p style={{color:"#fff", textAlign:"center", marginBottom:"30px"}}>No designs - Just help! Budget + Housing Guides</p>
+  
+  <div id="budget-buster" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #ff00ff"}}>
+    <h3 style={{color:"#ff00ff"}}>💰 Budget Buster</h3>
+    <p style={{color:"#fff"}}>Big Savings • Smart Finds • Happy Wallets! Save Money Finds, Budget Tips, Money-Saving Guides, How to Save $$$</p>
+    <p style={{color:"#aaa", fontSize:"14px"}}>Product on Main - Not in Shop</p>
+  </div>
+  
+  <div id="housing-resources" style={{background:"#2a2a2a", padding:"24px", borderRadius:"12px", marginBottom:"20px", border:"2px solid #00ffff"}}>
+    <h3 style={{color:"#00ffff"}}>🏠 Section 8 Housing</h3>
+    <p style={{color:"#fff"}}>Helping Families Find a Place to Call Home - Housing Choice Voucher Guides, Application Help, Scripts</p>
+    <p style={{color:"#aaa", fontSize:"14px"}}>Product on Main - Not in Shop</p>
+  </div>
+</div>
+
 <div style={{width:"100%", marginTop:"40px", cursor:"pointer"}} onClick={()=>window.open("https://shop.mimiscozycorner.com","_blank")}>
   <img 
     src="/images/mimi-banner-magenta.png" 
