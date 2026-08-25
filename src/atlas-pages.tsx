@@ -1,4 +1,11 @@
 import { useEffect, useState } from 'react'
+const ATLAS_PRODUCTS = [
+  { id: "budget", title: "Budget Buster", icon: "💰", color: "#0f5ca8", desc: "Save Money Finds - Dollar deals, coupon queen, broke but cozy", pdfs: ["budget-planner.pdf","money-saving.pdf","coupon-guide.pdf"] },
+  { id: "housing", title: "Section 8 Housing Guides", icon: "🏠", color: "#0f5ca8", desc: "Voucher Guides - Public Help - How to apply, scripts", pdfs: ["housing-guide.pdf","housing-scripts.pdf"] },
+  { id: "daily", title: "Mimi's Daily Finds", icon: "☕", color: "#ff69b4", desc: "Soft Life, Mom Life, Bookish, Cozy Reader Club", pdfs: [] },
+  { id: "creative", title: "Creative Ads", icon: "🎨", color: "#ff1493", desc: "50 Ad Templates - Marketing Resources", pdfs: ["ad-templates.pdf"] },
+  { id: "manifest", title: "Atlas OS - Manifesting", icon: "✨", color: "#6a00ff", desc: "Spiritual, Divine, Healing in Progress", pdfs: [] },
+]
 export const AtlasPages = () => {
   const [hash, setHash] = useState(typeof window !== 'undefined' ? window.location.hash : '')
   useEffect(() => {
@@ -6,80 +13,39 @@ export const AtlasPages = () => {
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
-  const go = (h: string) => {
-    window.location.hash = h
-    setHash(h)
-    window.scrollTo(0,0)
-  }
-  if (hash === '#atlas-budget') {
+  const go = (h: string) => { window.location.hash = h; setHash(h); window.scrollTo(0,0) }
+  const current = ATLAS_PRODUCTS.find(p => hash === `#atlas-${p.id}`)
+  if (current) {
     return (
       <div style={{padding:"40px", maxWidth:"900px", margin:"0 auto", background:"#111", color:"#fff", borderRadius:"16px", marginTop:"20px"}}>
-        <h1 style={{color:"#ff00ff"}}>💰 Budget Buster</h1>
-        <p>Big Savings • Smart Finds • Happy Wallets!</p>
+        <h1 style={{color: current.color}}>{current.icon} {current.title}</h1>
+        <p>{current.desc}</p>
         <div style={{marginTop:"30px"}}>
-          <h3>📄 Guides & Resources (Downloadable - Protected)</h3>
+          <h3>📄 Resources (Protected - Do Not Share)</h3>
           <div style={{background:"#222", padding:"20px", borderRadius:"12px", marginTop:"15px"}}>
-            <p>✅ Budget Planner PDF - <a href="/pdfs/budget-planner.pdf" download style={{color:"#ff00ff"}}>Download</a> (Protected - No Sharing)</p>
-            <p>✅ Money Saving Tips - <a href="/pdfs/money-saving.pdf" download style={{color:"#ff00ff"}}>Download</a> (Protected)</p>
-            <p>✅ Coupon Guide - <a href="/pdfs/coupon-guide.pdf" download style={{color:"#ff00ff"}}>Download</a> (Protected)</p>
+            {current.pdfs.length > 0 ? current.pdfs.map(pdf => (
+              <p key={pdf}>✅ {pdf} - <a href={`/pdfs/${pdf}`} target="_blank" rel="noopener" style={{color: current.color, fontWeight:"bold"}}>Open / Download</a></p>
+            )) : <p>Coming soon - This brand is in SHOP - shop.mimiscozycorner.com</p>}
           </div>
-          <button onClick={()=>go('#atlas')} style={{marginTop:"20px", background:"#ff00ff", color:"#fff", padding:"12px 24px", border:"none", borderRadius:"8px", cursor:"pointer"}}>← Back to Atlas OS</button>
-        </div>
-      </div>
-    )
-  }
-  if (hash === '#atlas-housing') {
-    return (
-      <div style={{padding:"40px", maxWidth:"900px", margin:"0 auto", background:"#111", color:"#fff", borderRadius:"16px", marginTop:"20px"}}>
-        <h1 style={{color:"#00ffff"}}>🏠 Section 8 Housing</h1>
-        <p>Helping Families Find a Place to Call Home</p>
-        <div style={{marginTop:"30px"}}>
-          <h3>📄 Housing Resources (Protected PDFs)</h3>
-          <div style={{background:"#222", padding:"20px", borderRadius:"12px", marginTop:"15px"}}>
-            <p>✅ Voucher Guide - <a href="/pdfs/housing-guide.pdf" download style={{color:"#00ffff"}}>Download</a></p>
-            <p>✅ Scripts - <a href="/pdfs/housing-scripts.pdf" download style={{color:"#00ffff"}}>Download</a></p>
-          </div>
-          <button onClick={()=>go('#atlas')} style={{marginTop:"20px", background:"#00ffff", color:"#000", padding:"12px 24px", border:"none", borderRadius:"8px", cursor:"pointer"}}>← Back to Atlas OS</button>
-        </div>
-      </div>
-    )
-  }
-  if (hash === '#atlas-creative') {
-    return (
-      <div style={{padding:"40px", maxWidth:"900px", margin:"0 auto", background:"#111", color:"#fff", borderRadius:"16px", marginTop:"20px"}}>
-        <h1 style={{color:"#ff1493"}}>🎨 Creative Ads</h1>
-        <p>Ad Templates & Marketing Resources</p>
-        <div style={{marginTop:"30px"}}>
-          <h3>📄 Ad Templates (Protected)</h3>
-          <div style={{background:"#222", padding:"20px", borderRadius:"12px", marginTop:"15px"}}>
-            <p>✅ 50 Ad Templates - <a href="/pdfs/ad-templates.pdf" download style={{color:"#ff1493"}}>Download</a></p>
-          </div>
-          <button onClick={()=>go('#atlas')} style={{marginTop:"20px", background:"#ff1493", color:"#fff", padding:"12px 24px", border:"none", borderRadius:"8px", cursor:"pointer"}}>← Back to Atlas OS</button>
+          <button onClick={()=>go('#atlas')} style={{marginTop:"20px", background: current.color, color:"#fff", padding:"12px 24px", border:"none", borderRadius:"8px", cursor:"pointer"}}>← Back to Atlas OS</button>
         </div>
       </div>
     )
   }
   if (hash === '#atlas') {
     return (
-      <div style={{padding:"40px", maxWidth:"900px", margin:"0 auto", background:"#111", color:"#fff", borderRadius:"16px", marginTop:"20px"}}>
-        <h1 style={{color:"#fff", textAlign:"center"}}>Atlas OS - Products</h1>
-        <p style={{textAlign:"center", color:"#aaa"}}>Branched from mimiscozycorner.com - No designs, just help!</p>
-        <div style={{display:"grid", gap:"20px", marginTop:"30px"}}>
-          <div onClick={()=>go('#atlas-budget')} style={{background:"#222", padding:"24px", borderRadius:"12px", border:"2px solid #ff00ff", cursor:"pointer"}}>
-            <h3 style={{color:"#ff00ff"}}>💰 Budget Buster</h3>
-            <p>Save Money Finds, Budget Tips, Guides</p>
-            <span style={{color:"#ff00ff", fontWeight:"bold"}}>View →</span>
-          </div>
-          <div onClick={()=>go('#atlas-housing')} style={{background:"#222", padding:"24px", borderRadius:"12px", border:"2px solid #00ffff", cursor:"pointer"}}>
-            <h3 style={{color:"#00ffff"}}>🏠 Section 8 Housing</h3>
-            <p>Housing Choice Voucher Guides</p>
-            <span style={{color:"#00ffff", fontWeight:"bold"}}>View →</span>
-          </div>
-          <div onClick={()=>go('#atlas-creative')} style={{background:"#222", padding:"24px", borderRadius:"12px", border:"2px solid #ff1493", cursor:"pointer"}}>
-            <h3 style={{color:"#ff1493"}}>🎨 Creative Ads</h3>
-            <p>Ad Templates, Creative Designs</p>
-            <span style={{color:"#ff1493", fontWeight:"bold"}}>View →</span>
-          </div>
+      <div style={{padding:"40px", maxWidth:"1000px", margin:"0 auto", background:"#111", color:"#fff", borderRadius:"16px", marginTop:"20px"}}>
+        <h1 style={{color:"#fff", textAlign:"center"}}>Atlas OS - Resources (No designs, just help!)</h1>
+        <p style={{textAlign:"center", color:"#aaa"}}>Manifesting + Housing Guides + Budget Help - Separated Brands</p>
+        <p style={{textAlign:"center", color:"#6a00ff", fontWeight:"bold"}}>{ATLAS_PRODUCTS.length} Resources - Shop has 330 Designs separately</p>
+        <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(280px, 1fr))", gap:"20px", marginTop:"30px"}}>
+          {ATLAS_PRODUCTS.map(p => (
+            <div key={p.id} onClick={()=>go(`#atlas-${p.id}`)} style={{background:"#222", padding:"24px", borderRadius:"12px", border:`2px solid ${p.color}`, cursor:"pointer"}}>
+              <h3 style={{color:p.color}}>{p.icon} {p.title}</h3>
+              <p style={{color:"#ccc", fontSize:"13px"}}>{p.desc}</p>
+              <span style={{color:p.color, fontWeight:"bold"}}>{p.pdfs.length > 0 ? `${p.pdfs.length} PDFs →` : 'View →'}</span>
+            </div>
+          ))}
         </div>
         <button onClick={()=>go('')} style={{marginTop:"30px", background:"#444", color:"#fff", padding:"12px 24px", border:"none", borderRadius:"8px", cursor:"pointer"}}>← Back to Main</button>
       </div>
