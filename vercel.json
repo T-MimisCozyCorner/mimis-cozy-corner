@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/The_Twin_Story_Method.html", "destination": "/The_Twin_Story_Method.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "cleanUrls": false
+}
